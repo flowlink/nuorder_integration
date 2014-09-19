@@ -7,8 +7,12 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     backports (3.6.0)
     coderay (1.1.0)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
+    diff-lcs (1.2.5)
     endpoint_base (0.2)
       activesupport
       jbuilder
@@ -31,6 +35,19 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.3.2)
+    rspec (3.1.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+    rspec-core (3.1.4)
+      rspec-support (~> 3.1.0)
+    rspec-expectations (3.1.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.1.0)
+    rspec-mocks (3.1.1)
+      rspec-support (~> 3.1.0)
+    rspec-support (3.1.0)
+    safe_yaml (1.0.3)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -50,6 +67,10 @@ GEM
       tilt (<= 1.5.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    vcr (2.9.3)
+    webmock (1.18.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
@@ -57,8 +78,12 @@ PLATFORMS
 DEPENDENCIES
   endpoint_base
   pry
+  rack-test
   rake
+  rspec
   sinatra
   sinatra-contrib
   tilt (~> 1.4.1)
   tilt-jbuilder
+  vcr
+  webmock

@@ -11,3 +11,9 @@ group :development do
   gem 'pry'
 end
 
+group :test do
+  gem 'vcr'
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'webmock'
+end
