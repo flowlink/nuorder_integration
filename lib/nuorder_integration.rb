@@ -6,3 +6,4 @@ require 'nuorder_services/base'
 require 'nuorder_services/order'
 
 require 'wombat/order'
+require 'integration/builders/order'

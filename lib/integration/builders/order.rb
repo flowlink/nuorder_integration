@@ -15,15 +15,18 @@ module Integration
           currency: @nuorder_order['currency_code'],
           placed_on: @nuorder_order['created_on'],
           totals: totals,
-          rep_name: @nuorder['rep_name'], # missing in official wombat docs
-          rep_code: @nuorder['rep_code'], # missing in official wombat docs
+          rep_name: @nuorder_order['rep_name'], # missing in official wombat docs
+          rep_code: @nuorder_order['rep_code'], # missing in official wombat docs
           retailer: retailer,
           line_items: line_items,
           adjustments: adjustments,
-          shipping_address: shipping_adress,
+          shipping_address: shipping_address,
           billing_address: billing_address,
           payments: payments
         )
+      end
+
+      def to_json
       end
 
       private
@@ -49,7 +52,7 @@ module Integration
 
       def line_items
         @line_items ||= @nuorder_order['line_items'].map do |line_item|
-          Wombat::LineItems.new(
+          Wombat::LineItem.new(
             product_id: 'SPREE T-SHIRT', # TODO: what it should be?
             name: 'Spree t-shirt', # TODO: should we do another api call?
             quantity: 2, # TODO: get quatity from sizes
@@ -75,6 +78,7 @@ module Integration
           zipcode: @nuorder_order['shipping_address']['zip'],
           city: @nuorder_order['shipping_address']['city'],
           state: @nuorder_order['shipping_address']['state'],
+          country: 'US', # TODO: there is no country in nuorder
           phone: '0000000' # TODO: there is no phone in nuorder
         )
       end
@@ -88,22 +92,25 @@ module Integration
           zipcode: @nuorder_order['billing_address']['zip'],
           city: @nuorder_order['billing_address']['city'],
           state: @nuorder_order['billing_address']['state'],
+          country: 'US', # TODO: there is no country in nuorder
           phone: '0000000' # TODO: there is no phone in nuorder
         )
       end
 
       def payments
         # TODO: placeholders, nuorder does not have payments in API
-        @payments ||= Wombat::Payment.new(
-          number: 0,
-          status: 'completed',
-          amount: 0,
-          payment_method: 'Credit card'
-        )
+        @payments ||= [
+          Wombat::Payment.new(
+            number: 0,
+            status: 'completed',
+            amount: 0,
+            payment_method: 'Credit card'
+          )
+        ]
       end
 
       def split_customers_name
-        @nuroder_order['retailer']['buyer_name'].split(' ', 2)
+        @nuorder_order['retailer']['buyer_name'].split(' ', 2)
       end
 
       def customers_first_name
