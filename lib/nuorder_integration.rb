@@ -4,3 +4,5 @@ require 'nuorder_connector/connector'
 
 require 'nuorder_services/base'
 require 'nuorder_services/order'
+
+require 'wombat/order'

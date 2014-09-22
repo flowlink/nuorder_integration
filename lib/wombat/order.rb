@@ -3,6 +3,7 @@ require_relative './adjustment'
 require_relative './line_item'
 require_relative './order_total'
 require_relative './payment'
+require_relative './retailer'
 
 module Wombat
   # https://support.wombat.co/hc/en-us/articles/202555780-Orders
@@ -40,6 +41,6 @@ module Wombat
     # Customers billing address
     attribute :billing_address, Address
     # Array of the order’s payments
-    attribute :payments, Array[Payments]
+    attribute :payments, Array[Payment]
   end
 end
