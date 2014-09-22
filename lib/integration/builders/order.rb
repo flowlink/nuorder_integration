@@ -14,21 +14,21 @@ module Integration
           email: 'spree@example.com', # TODO: where to find this email?
           currency: @nuorder_order['currency_code'],
           placed_on: @nuorder_order['created_on'],
-          totals: build_totals,
+          totals: totals,
           rep_name: @nuorder['rep_name'], # missing in official wombat docs
           rep_code: @nuorder['rep_code'], # missing in official wombat docs
-          retailer: build_retailer,
-          line_items: build_line_items,
-          adjustments: build_adjustments,
-          shipping_address: build_shipping_adress,
-          billing_address: build_billing_address,
-          payments: build_payments
+          retailer: retailer,
+          line_items: line_items,
+          adjustments: adjustments,
+          shipping_address: shipping_adress,
+          billing_address: billing_address,
+          payments: payments
         )
       end
 
       private
 
-      def build_totals
+      def totals
         @totals ||= Wombat::OrderTotal.new(
           item: 0,
           adjustment: 0,
@@ -39,7 +39,7 @@ module Integration
         )
       end
 
-      def build_retailer
+      def retailer
         @retailer ||= Wombat::Retailer.new(
           retailer_name: @nuorder_order['retailer']['retailer_name'],
           retailer_code: @nuorder_order['retailer']['retailer_code'],
@@ -47,7 +47,7 @@ module Integration
         )
       end
 
-      def build_line_items
+      def line_items
         @line_items ||= @nuorder_order['line_items'].map do |line_item|
           Wombat::LineItems.new(
             product_id: 'SPREE T-SHIRT', # TODO: what it should be?
@@ -58,12 +58,15 @@ module Integration
         end
       end
 
-      def build_adjustments
-        # nuroder does not have tax and shipping info in API
-        raise NotImplementedError
+      def adjustments
+        # TODO: placeholders, nuroder does not have tax and shipping info in API
+        @adjustments ||= [
+          Wombat::Adjustment.new(name: 'Tax', value: 0),
+          Wombat::Adjustment.new(name: 'Shipping', value: 0)
+        ]
       end
 
-      def build_shipping_address
+      def shipping_address
         @shipping_address ||= Wombat::Address.new(
           firstname: customers_first_name,
           lastname: customers_last_name,
@@ -76,7 +79,7 @@ module Integration
         )
       end
 
-      def build_billing_address
+      def billing_address
         @billing_address ||= Wombat::Address.new(
           firstname: customers_first_name,
           lastname: customers_last_name,
@@ -89,9 +92,14 @@ module Integration
         )
       end
 
-      def build_payments
-        # nuorder does not have payments in API
-        raise NotImplementedError
+      def payments
+        # TODO: placeholders, nuorder does not have payments in API
+        @payments ||= Wombat::Payment.new(
+          number: 0,
+          status: 'completed',
+          amount: 0,
+          payment_method: 'Credit card'
+        )
       end
 
       def split_customers_name
