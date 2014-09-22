@@ -11,6 +11,8 @@ module Wombat
 
     # Unique identifier for the order
     attribute :id, String
+    # Nuorder internal id of order
+    attribute :nuorder_id, String
     # Current order status
     attribute :status, String
     # Location where order was placed
@@ -23,6 +25,12 @@ module Wombat
     attribute :placed_on, String
     # Order value totals
     attribute :totals, OrderTotal
+    # Nuorder specific, missing in official wombat docs
+    attribute :rep_name, String
+    # Nuorder specific, missing in official wombat docs
+    attribute :rep_code, String
+    # Nuorder specific, missing in official wombat docs
+    attribute :retailer, Retailer
     # Array of the orders line items
     attribute :line_items, Array[LineItem]
     # Array ot the orders adjustments
