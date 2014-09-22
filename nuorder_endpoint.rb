@@ -1,6 +1,7 @@
 require 'sinatra'
-require "sinatra/reloader" if development?
+require 'sinatra/reloader' if development?
 require 'endpoint_base'
+require 'nuorder_integration'
 
 class NuorderEndpoint < EndpointBase::Sinatra::Base
   configure :development do

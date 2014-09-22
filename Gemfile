@@ -6,6 +6,7 @@ gem 'sinatra-contrib'
 gem 'tilt', '~> 1.4.1'
 gem 'tilt-jbuilder', require: 'sinatra/jbuilder'
 gem 'endpoint_base'
+gem 'httparty'
 
 group :development do
   gem 'rake'
