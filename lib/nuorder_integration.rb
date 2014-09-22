@@ -1,3 +1,6 @@
 $:.unshift File.dirname(__FILE__)
 
-require 'connector/nuorder_connector'
+require 'nuorder_connector/connector'
+
+require 'nuorder_services/base'
+require 'nuorder_services/order'
