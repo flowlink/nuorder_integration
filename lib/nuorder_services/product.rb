@@ -1,5 +1,5 @@
 module NuOrderServices
-  class Product
+  class Product < Base
     def find(id)
       nuorder.get("/api/product/#{id}")
     end

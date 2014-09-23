@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/product/541aa3f054f4a1d81aa878dd
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1411467905,oauth_nonce=cd8f0ee0fec95706,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=aa6ced0321c63d84e8c44b3159b88b3776048fff
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Tue, 23 Sep 2014 10:25:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '511'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1411467903603'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"2135346358"'
+    body:
+      encoding: UTF-8
+      string: '{"modified_on":"2014-09-18T09:20:48.208Z","schema_id":"541204aca01ceed9650486a2","name":"red
+        coat","style_number":"2","season":"winter","color":"red","category":"coats","sizes":[{"size":"M"}],"warehouses":[],"pricing":{"USD":{"wholesale":12,"retail":""}},"seasons":["undefined"],"created_on":"2014-09-18T09:20:48.206Z","size_groups":[],"available_now":true,"images":[],"cancelled":false,"active":true,"_id":"541aa3f054f4a1d81aa878dd","description":"","available_from":"","available_until":"","order_closing":""}'
+    http_version: 
+  recorded_at: Tue, 23 Sep 2014 10:25:06 GMT
+recorded_with: VCR 2.9.3
