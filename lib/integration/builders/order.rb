@@ -72,29 +72,33 @@ module Integration
 
       def shipping_address
         @shipping_address ||= Wombat::Address.new(
-          firstname: customers_first_name,
-          lastname: customers_last_name,
-          address1: nuorder_shipping_address['line_1'],
-          address2: nuorder_shipping_address['line_2'],
-          zipcode: nuorder_shipping_address['zip'],
-          city: nuorder_shipping_address['city'],
-          state: nuorder_shipping_address['state'],
-          country: 'US', # TODO: there is no country in nuorder
-          phone: '0000000' # TODO: there is no phone in nuorder
+          {
+            firstname: customers_first_name,
+            lastname: customers_last_name,
+            address1: nuorder_shipping_address['line_1'],
+            address2: nuorder_shipping_address['line_2'],
+            zipcode: nuorder_shipping_address['zip'],
+            city: nuorder_shipping_address['city'],
+            state: nuorder_shipping_address['state'],
+            country: 'US', # TODO: there is no country in nuorder
+            phone: '0000000' # TODO: there is no phone in nuorder
+          }.compact
         )
       end
 
       def billing_address
         @billing_address ||= Wombat::Address.new(
-          firstname: customers_first_name,
-          lastname: customers_last_name,
-          address1: nuorder_billing_address['line_1'],
-          address2: nuorder_billing_address['line_2'],
-          zipcode: nuorder_billing_address['zip'],
-          city: nuorder_billing_address['city'],
-          state: nuorder_billing_address['state'],
-          country: 'US', # TODO: there is no country in nuorder
-          phone: '0000000' # TODO: there is no phone in nuorder
+          {
+            firstname: customers_first_name,
+            lastname: customers_last_name,
+            address1: nuorder_billing_address['line_1'],
+            address2: nuorder_billing_address['line_2'],
+            zipcode: nuorder_billing_address['zip'],
+            city: nuorder_billing_address['city'],
+            state: nuorder_billing_address['state'],
+            country: 'US', # TODO: there is no country in nuorder
+            phone: '0000000' # TODO: there is no phone in nuorder
+          }.compact
         )
       end
 
