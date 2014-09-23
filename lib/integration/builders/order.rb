@@ -24,9 +24,10 @@ module Integration
           billing_address: billing_address,
           payments: payments
         )
-      end
-
-      def to_json
+      rescue Virtus::CoercionError => e
+        raise ArgumentError.new(
+          "`#{e.attribute.name}` attribute type is #{e.output.class}, expected #{e.target_type}"
+        )
       end
 
       private
@@ -44,9 +45,9 @@ module Integration
 
       def retailer
         @retailer ||= Wombat::Retailer.new(
-          retailer_name: @nuorder_order['retailer']['retailer_name'],
-          retailer_code: @nuorder_order['retailer']['retailer_code'],
-          buyer_name: @nuorder_order['retailer']['buyer_name']
+          retailer_name: nuorder_retailer['retailer_name'],
+          retailer_code: nuorder_retailer['retailer_code'],
+          buyer_name: nuorder_retailer['buyer_name']
         )
       end
 
@@ -73,11 +74,11 @@ module Integration
         @shipping_address ||= Wombat::Address.new(
           firstname: customers_first_name,
           lastname: customers_last_name,
-          address1: @nuorder_order['shipping_address']['line_1'],
-          address2: @nuorder_order['shipping_address']['line_2'],
-          zipcode: @nuorder_order['shipping_address']['zip'],
-          city: @nuorder_order['shipping_address']['city'],
-          state: @nuorder_order['shipping_address']['state'],
+          address1: nuorder_shipping_address['line_1'],
+          address2: nuorder_shipping_address['line_2'],
+          zipcode: nuorder_shipping_address['zip'],
+          city: nuorder_shipping_address['city'],
+          state: nuorder_shipping_address['state'],
           country: 'US', # TODO: there is no country in nuorder
           phone: '0000000' # TODO: there is no phone in nuorder
         )
@@ -87,11 +88,11 @@ module Integration
         @billing_address ||= Wombat::Address.new(
           firstname: customers_first_name,
           lastname: customers_last_name,
-          address1: @nuorder_order['billing_address']['line_1'],
-          address2: @nuorder_order['billing_address']['line_2'],
-          zipcode: @nuorder_order['billing_address']['zip'],
-          city: @nuorder_order['billing_address']['city'],
-          state: @nuorder_order['billing_address']['state'],
+          address1: nuorder_billing_address['line_1'],
+          address2: nuorder_billing_address['line_2'],
+          zipcode: nuorder_billing_address['zip'],
+          city: nuorder_billing_address['city'],
+          state: nuorder_billing_address['state'],
           country: 'US', # TODO: there is no country in nuorder
           phone: '0000000' # TODO: there is no phone in nuorder
         )
@@ -110,15 +111,27 @@ module Integration
       end
 
       def split_customers_name
-        @nuorder_order['retailer']['buyer_name'].split(' ', 2)
+        @nuorder_order.fetch('retailer', {})['buyer_name'].try(:split, ' ', 2)
       end
 
       def customers_first_name
-        split_customers_name[0]
+        split_customers_name.try(:[], 0)
       end
 
       def customers_last_name
-        split_customers_name[1]
+        split_customers_name.try(:[], 1)
+      end
+
+      def nuorder_shipping_address
+        @nuroder_shipping_address ||= @nuorder_order.fetch('shipping_address', {})
+      end
+
+      def nuorder_billing_address
+        @nuorder_billing_address ||= @nuorder_order.fetch('billing_address', {})
+      end
+
+      def nuorder_retailer
+        @nuorder_retailer ||= @nuorder_order.fetch('retailer', {})
       end
     end
   end
