@@ -8,6 +8,7 @@ gem 'tilt-jbuilder', require: 'sinatra/jbuilder'
 gem 'endpoint_base'
 gem 'httparty'
 gem 'virtus'
+gem 'activesupport'
 
 group :development do
   gem 'rake'

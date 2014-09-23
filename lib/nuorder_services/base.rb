@@ -4,11 +4,12 @@ module NuOrderServices
 
     def initialize(config)
       @config = config
+      init_nuorder
     end
 
     private
 
-    def nuorder
+    def init_nuorder
       @nuorder ||= NuOrderConnector::Connector.new(
         consumer_key: config['nuorder_consumer_key'],
         consumer_secret: config['nuorder_consumer_secret'],
