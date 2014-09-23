@@ -9,7 +9,17 @@ describe Wombat::OrderBuilder do
     VCR.use_cassette('nuorder_order_all') do
       response = order_service.all('pending')
       response.each do |order|
-        expect { Wombat::OrderBuilder.new(order).build }.to_not raise_error
+        expect { subject.new(order).build }.to_not raise_error
+      end
+    end
+  end
+
+  it 'does not parse invalid order' do
+    VCR.use_cassette('nuorder_order_all') do
+      response = order_service.all('pending')
+      response.each do |order|
+        invalid_order = order.delete(:_id)
+        expect { subject.new(invalid_order).build }.to raise_error
       end
     end
   end
