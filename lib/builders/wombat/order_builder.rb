@@ -51,7 +51,7 @@ module Wombat
     end
 
     def line_items
-      @line_items ||= @nuorder_order['line_items'].map do |line_item|
+      @line_items ||= @nuorder_order['line_items'].try(:map) do |line_item|
         Wombat::Order::LineItem.new(
           product_id: 'SPREE T-SHIRT', # TODO: what it should be?
           name: 'Spree t-shirt', # TODO: should we do another api call?
