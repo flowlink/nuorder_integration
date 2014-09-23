@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/spree/endpoint_base.git
+  revision: 5a819541b20ade1b7ec6eb19f38fbab7eaf3e14e
+  specs:
+    endpoint_base (0.3)
+      activesupport
+      jbuilder
+      json
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -21,10 +30,6 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.2.5)
-    endpoint_base (0.2)
-      activesupport
-      jbuilder
-      json
     equalizer (0.0.9)
     httparty (0.13.1)
       json (~> 1.8)
@@ -96,7 +101,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  endpoint_base
+  endpoint_base!
   httparty
   pry
   rack-test
