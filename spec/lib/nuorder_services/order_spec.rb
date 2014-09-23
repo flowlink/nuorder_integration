@@ -11,6 +11,13 @@ describe NuOrderServices::Order do
         expect(response).not_to be_nil
       end
     end
+
+    it 'returns all orders with different status' do
+      VCR.use_cassette('nuorder_order_all2') do
+        response = subject.all(['pending', 'edited', 'approved'])
+        expect(response.size).to eq 2
+      end
+    end
   end
 
   describe '#process!' do
