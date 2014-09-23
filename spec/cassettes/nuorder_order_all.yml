@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/orders/pending/detail
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1411466454,oauth_nonce=ee798b8bbda8a984,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=d99ea3b847ccf6d03ad3afa746f690dcde4e56a1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Tue, 23 Sep 2014 10:00:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1826'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1411466452452'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"-629301977"'
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"541c279e663e94c8129f46d3","additional_percentage":0,"created_on":"2014-09-19T12:54:54.921Z","currency_code":"USD","customer_po_number":"","discount":0,"easy_order_ready":false,"edited":false,"existing_pdf_original":"541c279e663e94c8129f46d2","line_items":[{"product":{"_id":"541aa3f054f4a1d81aa878dd","style_number":"2","color":"red","color_code":""},"sizes":[{"size":"M","quantity":1,"price":12}]},{"product":{"_id":"541aa3c754f4a1d81aa878d2","style_number":"1","color":"white","color_code":""},"sizes":[{"size":"M","quantity":1,"price":10}]}],"modified_on":"2014-09-19T12:54:54.933Z","notes":"","order_number":"100505","order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek"},"schema_id":"541204aca01ceed9650486a4","split":false,"status":"pending","submitted_by":"web","total":22,"rep_name":"Sameer","rep_code":"","start_ship":"2014-09-19T00:00:00.000Z","end_ship":"2014-10-19T00:00:00.000Z"},{"modified_on":"2014-09-23T08:14:38.449Z","order_number":"100506","customer_po_number":"","status":"pending","currency_code":"USD","discount":0,"additional_percentage":0,"notes":"","submitted_by":"web","total":12,"schema_id":"541204aca01ceed9650486a4","existing_pdf_original":"54212bee43c0433f23084734","line_items":[{"product":{"_id":"541aa3f054f4a1d81aa878dd","style_number":"2","color":"red","color_code":""},"sizes":[{"size":"M","quantity":1,"price":12}],"warehouse":"default"}],"created_on":"2014-09-23T08:14:38.438Z","edited":false,"order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek"},"easy_order_ready":false,"split":false,"_id":"54212bee43c0433f23084735","rep_name":"Sameer","rep_code":"","start_ship":"2014-09-23T00:00:00.000Z","end_ship":"2014-10-23T00:00:00.000Z"}]'
+    http_version: 
+  recorded_at: Tue, 23 Sep 2014 10:00:55 GMT
+recorded_with: VCR 2.9.3
