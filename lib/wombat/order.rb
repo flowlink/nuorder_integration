@@ -1,13 +1,77 @@
-require_relative './address'
-require_relative './adjustment'
-require_relative './line_item'
-require_relative './order_total'
-require_relative './payment'
-require_relative './retailer'
-
 module Wombat
   # https://support.wombat.co/hc/en-us/articles/202555780-Orders
   class Order
+
+    class Address
+      include Virtus.model(strict: true)
+
+      attribute :firstname, String
+      attribute :lastname, String, default: ''
+      attribute :address1, String
+      attribute :address2, String, default: ''
+      attribute :zipcode, String
+      attribute :city, String
+      attribute :state, String, default: ''
+      attribute :country, String
+      attribute :phone, String
+    end
+
+    class Adjustment
+      include Virtus.model(strict: true)
+
+      attribute :name, String
+      attribute :value, Integer
+    end
+
+    class LineItem
+      include Virtus.model(strict: true)
+
+      # Unique identifier of product
+      attribute :product_id, String
+      # Product’s name
+      attribute :name, String
+      # Quantity ordered
+      attribute :quantity, Integer
+      # Price per item
+      attribute :price, Integer
+    end
+
+
+    # https://support.wombat.co/hc/en-us/articles/202555780-Orders#ordertotalobjectattributes
+    class OrderTotal
+      include Virtus.model(strict: true)
+
+      # Total of price * quantity for all line items
+      attribute :item, Integer
+      # Total of all adjustment values
+      attribute :adjustment, Integer
+      # Total of tax adjustment values
+      attribute :tax, Integer
+      # Total of shipping adjustment values
+      attribute :shipping, Integer
+      # Total of all payments for this order
+      attribute :payment, Integer
+      # Overall total of order
+      attribute :order, Integer
+    end
+
+    class Payment
+      include Virtus.model(strict: true)
+
+      attribute :number, Integer
+      attribute :status, String
+      attribute :amount, Integer
+      attribute :payment_method, String
+    end
+
+    class Retailer
+      include Virtus.model(strict: true)
+
+      attribute :retailer_name, String
+      attribute :retailer_code, String
+      attribute :buyer_name, String
+    end
+
     include Virtus.model(strict: true)
 
     # Unique identifier for the order

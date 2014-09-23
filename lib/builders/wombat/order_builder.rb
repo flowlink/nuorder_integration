@@ -32,7 +32,7 @@ module Wombat
     private
 
     def totals
-      @totals ||= Wombat::OrderTotal.new(
+      @totals ||= Wombat::Order::OrderTotal.new(
         item: 0,
         adjustment: 0,
         tax: 0,
@@ -43,7 +43,7 @@ module Wombat
     end
 
     def retailer
-      @retailer ||= Wombat::Retailer.new(
+      @retailer ||= Wombat::Order::Retailer.new(
         retailer_name: nuorder_retailer['retailer_name'],
         retailer_code: nuorder_retailer['retailer_code'],
         buyer_name: nuorder_retailer['buyer_name']
@@ -52,7 +52,7 @@ module Wombat
 
     def line_items
       @line_items ||= @nuorder_order['line_items'].map do |line_item|
-        Wombat::LineItem.new(
+        Wombat::Order::LineItem.new(
           product_id: 'SPREE T-SHIRT', # TODO: what it should be?
           name: 'Spree t-shirt', # TODO: should we do another api call?
           quantity: 2, # TODO: get quatity from sizes
@@ -64,13 +64,13 @@ module Wombat
     def adjustments
       # TODO: placeholders, nuroder does not have tax and shipping info in API
       @adjustments ||= [
-        Wombat::Adjustment.new(name: 'Tax', value: 0),
-        Wombat::Adjustment.new(name: 'Shipping', value: 0)
+        Wombat::Order::Adjustment.new(name: 'Tax', value: 0),
+        Wombat::Order::Adjustment.new(name: 'Shipping', value: 0)
       ]
     end
 
     def shipping_address
-      @shipping_address ||= Wombat::Address.new(
+      @shipping_address ||= Wombat::Order::Address.new(
         {
           firstname: customers_first_name,
           lastname: customers_last_name,
@@ -86,7 +86,7 @@ module Wombat
     end
 
     def billing_address
-      @billing_address ||= Wombat::Address.new(
+      @billing_address ||= Wombat::Order::Address.new(
         {
           firstname: customers_first_name,
           lastname: customers_last_name,
@@ -104,7 +104,7 @@ module Wombat
     def payments
       # TODO: placeholders, nuorder does not have payments in API
       @payments ||= [
-        Wombat::Payment.new(
+        Wombat::Order::Payment.new(
           number: 0,
           status: 'completed',
           amount: 0,
