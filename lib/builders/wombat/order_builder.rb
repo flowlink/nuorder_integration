@@ -14,8 +14,8 @@ module Wombat
         currency: @nuorder_order['currency_code'],
         placed_on: @nuorder_order['created_on'],
         totals: totals,
-        rep_name: @nuorder_order['rep_name'], # missing in official wombat docs
-        rep_code: @nuorder_order['rep_code'], # missing in official wombat docs
+        rep_name: @nuorder_order['rep_name'],
+        rep_code: @nuorder_order['rep_code'],
         retailer: retailer,
         line_items: line_items,
         adjustments: adjustments,
@@ -33,7 +33,9 @@ module Wombat
 
     def totals
       @totals ||= Wombat::Order::OrderTotal.new(
-        item: 0,
+        item: line_items.reduce(0) do |total, item|
+          total + (item.quantity*item.price)
+        end,
         adjustment: 0,
         tax: 0,
         shipping: 0,
@@ -52,11 +54,18 @@ module Wombat
 
     def line_items
       @line_items ||= @nuorder_order['line_items'].try(:map) do |line_item|
+        price = 0
+        quantity = 0
+        line_item['sizes'].try(:each) do |size|
+          price += size['price'].to_i
+          quantity += size['quantity'].to_i
+        end
+
         Wombat::Order::LineItem.new(
           product_id: 'SPREE T-SHIRT', # TODO: what it should be?
-          name: 'Spree t-shirt', # TODO: should we do another api call?
-          quantity: 2, # TODO: get quatity from sizes
-          price: 100, # TODO: get price from sizes
+          name: 'Spree t-shirt', # TODO: make another api call to get it?
+          quantity: quantity,
+          price: price,
         )
       end
     end
