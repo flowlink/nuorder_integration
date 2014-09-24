@@ -9,8 +9,16 @@ class NuorderEndpoint < EndpointBase::Sinatra::Base
   end
   enable :logging
 
-  get '/get_orders' do
-    'NotImplemented'
+  post '/get_orders' do
+    begin
+      orders = NuOrderServices::Order.new(@config).all(['edited', 'approved'])
+      orders.map! { |nuorder_order| Wombat::OrderBuilder.new(nuorder_order).build }
+      orders.each { |order| add_object :order, Wombat::OrderSerializer.serialize(order) }
+      result 200
+    rescue Exception => e
+      log_exception(e)
+      result 500, e.message
+    end
   end
 
   post '/cancel_order' do
