@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       Authorization:
-      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1411549461,oauth_nonce=737bfdfc49f14a79,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=e3d1df1b05255549e585071438f94393694774f4
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1411554285,oauth_nonce=7e5aa087ada3075d,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=f4dfb37e5d50e7643771ef5d0f69cd5cd7103fae
   response:
     status:
       code: 200
@@ -17,7 +17,7 @@ http_interactions:
       Server:
       - nginx/1.4.6
       Date:
-      - Wed, 24 Sep 2014 09:04:22 GMT
+      - Wed, 24 Sep 2014 10:24:46 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -27,7 +27,7 @@ http_interactions:
       X-Powered-By:
       - Express
       Request-Token:
-      - '1411549462194'
+      - '1411554286235'
       Cache-Control:
       - private,max-age=0, must-revalidate
       Etag:
@@ -36,7 +36,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 24 Sep 2014 09:04:22 GMT
+  recorded_at: Wed, 24 Sep 2014 10:24:46 GMT
 - request:
     method: get
     uri: http://sandbox1.nuorder.com/api/orders/approved/detail
@@ -45,7 +45,7 @@ http_interactions:
       string: ''
     headers:
       Authorization:
-      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1411549462,oauth_nonce=e8cf7afce136f847,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=360d7cb1a1bba9b965e7dad1c62ef3b5a747033a
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1411554286,oauth_nonce=8c93471ba7177551,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=a4ce5031bbb78b9ba00001f451d58b9cfe306f2b
   response:
     status:
       code: 200
@@ -54,26 +54,63 @@ http_interactions:
       Server:
       - nginx/1.4.6
       Date:
-      - Wed, 24 Sep 2014 09:04:22 GMT
+      - Wed, 24 Sep 2014 10:24:46 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1157'
+      - '1302'
       Connection:
       - keep-alive
       X-Powered-By:
       - Express
       Request-Token:
-      - '1411549462807'
+      - '1411554286798'
       Cache-Control:
       - private,max-age=0, must-revalidate
       Etag:
-      - '"-1983234467"'
+      - '"1949022672"'
     body:
       encoding: UTF-8
-      string: '[{"_id":"54212bee43c0433f23084735","additional_percentage":0,"billing_address":{"city":"Poznan","country":"Poland","display_name":"ul.
-        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","zip":"61-737"},"created_on":"2014-09-23T08:14:38.438Z","currency_code":"USD","discount":0,"easy_order_ready":false,"edited":true,"edited_on":"2014-09-23T12:24:00.872Z","existing_pdf_original":"5421666043c0433f230848e1","line_items":[{"product":{"_id":"541aa3f054f4a1d81aa878dd","style_number":"2","color":"red","color_code":""},"sizes":[{"size":"M","quantity":1,"price":12}]}],"modified_on":"2014-09-23T12:24:00.919Z","order_number":"100506","order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek"},"schema_id":"541204aca01ceed9650486a4","shipping_address":{"city":"Poznan","code":"1234","country":"Poland","display_name":"ul.
-        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","ref":"542164c943c0433f2308486c","zip":"61-737"},"split":false,"status":"approved","submitted_by":"web","total":12,"notes":"","rep_name":"Sameer","rep_code":"","start_ship":"2014-09-23T00:00:00.000Z","end_ship":"2014-10-23T00:00:00.000Z"}]'
+      string: '[{"_id":"541c279e663e94c8129f46d3","additional_percentage":0,"billing_address":{"city":"Poznan","country":"Poland","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","zip":"61-737"},"created_on":"2014-09-19T12:54:54.921Z","currency_code":"USD","discount":0,"easy_order_ready":false,"edited":true,"edited_on":"2014-09-23T12:24:35.720Z","existing_pdf_original":"5421668343c0433f23084942","line_items":[{"product":{"_id":"541aa3f054f4a1d81aa878dd","style_number":"2","color":"red","color_code":""},"sizes":[{"size":"M","quantity":1,"price":12}]},{"product":{"_id":"541aa3c754f4a1d81aa878d2","style_number":"1","color":"white","color_code":""},"sizes":[{"size":"M","quantity":1,"price":10}]}],"modified_on":"2014-09-23T12:24:35.735Z","order_number":"100505","order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek"},"schema_id":"541204aca01ceed9650486a4","shipping_address":{"city":"Poznan","code":"1234","country":"Poland","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","ref":"542164c943c0433f2308486c","zip":"61-737"},"split":false,"status":"approved","submitted_by":"web","total":22,"notes":"","rep_name":"Sameer","rep_code":"","start_ship":"2014-09-19T00:00:00.000Z","end_ship":"2014-10-19T00:00:00.000Z"}]'
     http_version: 
-  recorded_at: Wed, 24 Sep 2014 09:04:22 GMT
+  recorded_at: Wed, 24 Sep 2014 10:24:46 GMT
+- request:
+    method: post
+    uri: http://sandbox1.nuorder.com/api/order/541c279e663e94c8129f46d3/process
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1411554293,oauth_nonce=acc70591a8fb9cf4,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=5d1cc2cc26214cf76d891c319b03580cc881cff1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Wed, 24 Sep 2014 10:24:54 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1301'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1411554294315'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+    body:
+      encoding: UTF-8
+      string: '{"_id":"541c279e663e94c8129f46d3","additional_percentage":0,"billing_address":{"city":"Poznan","country":"Poland","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","zip":"61-737"},"created_on":"2014-09-19T12:54:54.921Z","currency_code":"USD","discount":0,"easy_order_ready":false,"edited":true,"edited_on":"2014-09-23T12:24:35.720Z","existing_pdf_original":"5421668343c0433f23084942","line_items":[{"product":{"_id":"541aa3f054f4a1d81aa878dd","style_number":"2","color":"red","color_code":""},"sizes":[{"size":"M","quantity":1,"price":12}]},{"product":{"_id":"541aa3c754f4a1d81aa878d2","style_number":"1","color":"white","color_code":""},"sizes":[{"size":"M","quantity":1,"price":10}]}],"modified_on":"2014-09-23T12:24:35.735Z","order_number":"100505","order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek"},"schema_id":"541204aca01ceed9650486a4","shipping_address":{"city":"Poznan","code":"1234","country":"Poland","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","ref":"542164c943c0433f2308486c","zip":"61-737"},"split":false,"status":"processed","submitted_by":"web","total":22,"notes":"","rep_name":"Sameer","rep_code":"","start_ship":"2014-09-19T00:00:00.000Z","end_ship":"2014-10-19T00:00:00.000Z"}'
+    http_version: 
+  recorded_at: Wed, 24 Sep 2014 10:24:54 GMT
 recorded_with: VCR 2.9.3

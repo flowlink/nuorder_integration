@@ -11,9 +11,11 @@ class NuorderEndpoint < EndpointBase::Sinatra::Base
 
   post '/get_orders' do
     begin
-      orders = NuOrderServices::Order.new(@config).all(['edited', 'approved'])
+      order_service = NuOrderServices::Order.new(@config)
+      orders = order_service.all(['edited', 'approved'])
       orders.map! { |nuorder_order| Wombat::OrderBuilder.new(nuorder_order).build }
       orders.each { |order| add_object :order, Wombat::OrderSerializer.serialize(order) }
+      order_service.process!(orders.map(&:nuorder_id))
       result 200
     rescue Exception => e
       log_exception(e)

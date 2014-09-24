@@ -24,14 +24,14 @@ describe NuOrderServices::Order do
     it 'calls proper api endpoint' do
       VCR.use_cassette('nuorder_order_process') do
         response = subject.process!('541c279e663e94c8129f46d3')
-        expect(response.response.code).to eq '200'
+        expect(response.first.response.code).to eq '200'
       end
     end
 
     it 'changes order status to processed' do
       VCR.use_cassette('nuorder_order_process') do
         response = subject.process!('541c279e663e94c8129f46d3')
-        expect(response['status']).to eq 'processed'
+        expect(response.first['status']).to eq 'processed'
       end
     end
   end

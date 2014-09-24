@@ -2,19 +2,21 @@ module NuOrderServices
   class Order < Base
 
     def all(options)
-      if options.is_a? String
-        nuorder.get("/api/orders/#{options}/detail")
-      elsif options.is_a? Array
-        results = []
-        options.each do |status|
-          results << nuorder.get("/api/orders/#{status}/detail")
-        end
-        results.flatten
+      options = [*options]
+      results = []
+      options.each do |status|
+        results << nuorder.get("/api/orders/#{status}/detail")
       end
+      results.flatten
     end
 
-    def process!(id)
-      nuorder.post("/api/order/#{id}/process")
+    def process!(ids)
+      ids = [*ids]
+      results = []
+      ids.each do |id|
+        results << nuorder.post("/api/order/#{id}/process")
+      end
+      results.flatten
     end
 
     def cancel!(id)
