@@ -44,15 +44,15 @@ module Wombat
       # Total of price * quantity for all line items
       attribute :item, Integer
       # Total of all adjustment values
-      attribute :adjustment, Integer
+      attribute :adjustment, Integer, default: ->(this, _) { this.tax + this.shipping }
       # Total of tax adjustment values
       attribute :tax, Integer
       # Total of shipping adjustment values
       attribute :shipping, Integer
       # Total of all payments for this order
-      attribute :payment, Integer
+      attribute :payment, Integer, default: ->(this, _) { this.item + this.adjustment }
       # Overall total of order
-      attribute :order, Integer
+      attribute :order, Integer, default: ->(this, _) { this.payment }
     end
 
     class Payment

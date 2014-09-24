@@ -36,11 +36,8 @@ module Wombat
         item: line_items.reduce(0) do |total, item|
           total + (item.quantity*item.price)
         end,
-        adjustment: 0,
-        tax: 0,
-        shipping: 0,
-        payment: 0,
-        order: 0
+        tax: 0, # TODO: where to get tax cost from?
+        shipping: 0, # TODO: where to get shipping cost from?
       )
     end
 
