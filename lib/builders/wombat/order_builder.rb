@@ -8,8 +8,8 @@ module Wombat
       @order ||= Wombat::Order.new(
         id: @nuorder_order['order_number'],
         nuorder_id: @nuorder_order['_id'],
-        status: 'complete',         # TODO: is it always complete?
-        channel: 'spree',           # TODO: is it always spree?
+        status: 'complete',
+        channel: 'nuorder',
         email: 'spree@example.com', # TODO: where to find this email?
         currency: @nuorder_order['currency_code'],
         placed_on: @nuorder_order['created_on'],
@@ -85,8 +85,6 @@ module Wombat
           zipcode: nuorder_shipping_address['zip'],
           city: nuorder_shipping_address['city'],
           state: nuorder_shipping_address['state'],
-          country: 'US', # TODO: there is no country in nuorder
-          phone: '0000000' # TODO: there is no phone in nuorder
         }.compact
       )
     end
@@ -101,22 +99,13 @@ module Wombat
           zipcode: nuorder_billing_address['zip'],
           city: nuorder_billing_address['city'],
           state: nuorder_billing_address['state'],
-          country: 'US', # TODO: there is no country in nuorder
-          phone: '0000000' # TODO: there is no phone in nuorder
         }.compact
       )
     end
 
     def payments
-      # TODO: placeholders, nuorder does not have payments in API
-      @payments ||= [
-        Wombat::Order::Payment.new(
-          number: 0,
-          status: 'completed',
-          amount: 0,
-          payment_method: 'Credit card'
-        )
-      ]
+      # This should be empty for now as nuorder does not have payments in API
+      @payments ||= []
     end
 
     def split_customers_name
