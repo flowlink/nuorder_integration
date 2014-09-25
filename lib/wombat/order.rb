@@ -3,7 +3,7 @@ module Wombat
   class Order
 
     class Address
-      include Virtus.value_object
+      include Virtus.value_object(strict: true)
 
       attribute :firstname, String
       attribute :lastname, String, default: ''
@@ -12,19 +12,19 @@ module Wombat
       attribute :zipcode, String
       attribute :city, String
       attribute :state, String, default: ''
-      attribute :country, String
-      attribute :phone, String
+      attribute :country, String, default: ''
+      attribute :phone, String, default: ''
     end
 
     class Adjustment
-      include Virtus.value_object
+      include Virtus.value_object(strict: true)
 
       attribute :name, String
       attribute :value, Integer
     end
 
     class LineItem
-      include Virtus.value_object
+      include Virtus.value_object(strict: true)
 
       # Unique identifier of product
       attribute :product_id, String
@@ -39,7 +39,7 @@ module Wombat
 
     # https://support.wombat.co/hc/en-us/articles/202555780-Orders#ordertotalobjectattributes
     class OrderTotal
-      include Virtus.value_object
+      include Virtus.value_object(strict: true)
 
       # Total of price * quantity for all line items
       attribute :item, Integer
@@ -56,7 +56,7 @@ module Wombat
     end
 
     class Payment
-      include Virtus.value_object
+      include Virtus.value_object(strict: true)
 
       attribute :number, Integer
       attribute :status, String
@@ -65,14 +65,14 @@ module Wombat
     end
 
     class Retailer
-      include Virtus.value_object
+      include Virtus.value_object(strict: true)
 
       attribute :retailer_name, String
       attribute :retailer_code, String
       attribute :buyer_name, String
     end
 
-    include Virtus.value_object
+    include Virtus.value_object(strict: true)
 
     # Unique identifier for the order
     attribute :id, String
