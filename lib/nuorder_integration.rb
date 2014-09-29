@@ -12,4 +12,5 @@ require 'serializers/wombat/order_serializer'
 
 require 'models/nuorder/inventory'
 require 'builders/nuorder/inventory_builder'
+require 'serializers/nuorder/inventory_serializer'
 
