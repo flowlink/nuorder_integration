@@ -11,7 +11,7 @@ module NuOrder
           sizes: wip.sizes.map { |size| size.attributes }
         }
       end
-      output
+      {inventory: [output]}
     end
   end
 end
