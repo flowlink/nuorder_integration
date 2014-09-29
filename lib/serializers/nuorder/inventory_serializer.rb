@@ -3,7 +3,7 @@ module NuOrder
     def self.serialize(nuorder_inventory)
       output = {}
       [:prebook, :warehouse].each do |attribute|
-        output[:prebook] = nuorder_inventory.send(attribute)
+        output[attribute] = nuorder_inventory.send(attribute)
       end
       output[:wip] = nuorder_inventory.wip.map do |wip|
         {
