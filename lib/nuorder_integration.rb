@@ -6,11 +6,7 @@ require 'nuorder_services/base'
 require 'nuorder_services/order'
 require 'nuorder_services/product'
 
-require 'models/wombat/order'
-require 'builders/wombat/order_builder'
-require 'serializers/wombat/order_serializer'
-
-require 'models/nuorder/inventory'
-require 'builders/nuorder/inventory_builder'
-require 'serializers/nuorder/inventory_serializer'
+Dir[App.root.join("lib/models/**/*.rb")].each { |file| require file }
+Dir[App.root.join("lib/builders/**/*.rb")].each { |file| require file }
+Dir[App.root.join("lib/serializers/**/*.rb")].each { |file| require file }
 
