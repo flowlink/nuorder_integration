@@ -6,6 +6,10 @@ require 'nuorder_services/base'
 require 'nuorder_services/order'
 require 'nuorder_services/product'
 
-require 'wombat/order'
+require 'models/wombat/order'
 require 'builders/wombat/order_builder'
 require 'serializers/wombat/order_serializer'
+
+require 'models/nuorder/inventory'
+require 'builders/nuorder/inventory_builder'
+
