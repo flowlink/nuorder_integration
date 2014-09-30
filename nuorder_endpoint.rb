@@ -23,6 +23,20 @@ class NuorderEndpoint < EndpointBase::Sinatra::Base
     end
   end
 
+  post '/set_inventory' do
+    begin
+      inventory = NuOrder::InventoryBuilder.new(@payload[:inventory]).build
+      inventory = NuOrder::InventorySerializer.serialize(inventory)
+      inventory_service = NuOrderServices::Inventory.new(@config)
+      inventory_service.update_inventory(@payload[:inventory][:nuorder_id], inventory)
+      set_summary "Inventory for product #{@payload[:inventory][:product_id]} updated to ‘#{@payload[:inventory][:quantity]}’"
+      result 200
+    rescue Exception => e
+      log_exception(e)
+      result 500, e.message
+    end
+  end
+
   post '/cancel_order' do
     begin
       NuOrderServices::Order.new(@config).cancel!(@payload[:nuorder_id])

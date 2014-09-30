@@ -17,7 +17,7 @@ module NuOrder
     def build_wip
       @wip ||= [
         NuOrder::Inventory::Wip.new(
-          name: @wombat_inventory['id'],
+          name: @wombat_inventory['product_id'],
           sizes: [
             NuOrder::Inventory::Wip::Size.new(
               size: 'default',
