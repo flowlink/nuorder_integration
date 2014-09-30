@@ -43,7 +43,7 @@ module NuOrderConnector
         query: params
       }
       response = self.class.get(url, options)
-      response
+      validate_response(response)
     end
 
     def post(url, params = nil)
@@ -52,10 +52,15 @@ module NuOrderConnector
         body: params
       }
       response = self.class.post(url, options)
-      response
+      validate_response(response)
     end
 
     private
+
+    def validate_response(response)
+      return response if response.code == 200
+      raise "NuOrder API Error #{response.code} - #{response}"
+    end
 
     def get_oauth_headers(method, url, addons = nil)
       time = Time.now.to_i
