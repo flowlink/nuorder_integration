@@ -85,7 +85,7 @@ module Wombat
           zipcode: nuorder_shipping_address['zip'],
           city: nuorder_shipping_address['city'],
           state: nuorder_shipping_address['state'],
-          country: nuroder_shipping_address['country'],
+          country: nuorder_shipping_address['country'],
           phone: nuorder_shipping_address['phone']
         }.compact
       )
