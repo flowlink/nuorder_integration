@@ -1,5 +1,5 @@
 module NuOrder
-  class InventoryBuilder
+  class InventoryMapper
     def initialize(wombat_inventory)
       @wombat_inventory = wombat_inventory.dup.freeze
     end

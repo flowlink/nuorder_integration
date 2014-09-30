@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Wombat::OrderBuilder do
+describe Wombat::OrderMapper do
   include_examples 'config hash'
   subject { described_class }
   let(:order_service) { NuOrderServices::Order.new(config) }

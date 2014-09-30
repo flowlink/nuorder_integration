@@ -1,5 +1,5 @@
 module Wombat
-  class OrderBuilder
+  class OrderMapper
     def initialize(nuorder_order)
       @nuorder_order = nuorder_order.dup.freeze
     end
