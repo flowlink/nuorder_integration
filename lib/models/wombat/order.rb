@@ -33,7 +33,7 @@ module Wombat
       # Quantity ordered
       attribute :quantity, Integer
       # Price per item
-      attribute :price, Integer
+      attribute :price, Numeric
     end
 
 
@@ -42,17 +42,17 @@ module Wombat
       include Virtus.value_object(strict: true)
 
       # Total of price * quantity for all line items
-      attribute :item, Integer
+      attribute :item, Numeric
       # Total of all adjustment values
-      attribute :adjustment, Integer, default: ->(this, _) { this.tax + this.shipping }
+      attribute :adjustment, Numeric, default: ->(this, _) { this.tax + this.shipping }
       # Total of tax adjustment values
-      attribute :tax, Integer
+      attribute :tax, Numeric
       # Total of shipping adjustment values
-      attribute :shipping, Integer
+      attribute :shipping, Numeric
       # Total of all payments for this order
-      attribute :payment, Integer, default: ->(this, _) { this.item + this.adjustment }
+      attribute :payment, Numeric, default: ->(this, _) { this.item + this.adjustment }
       # Overall total of order
-      attribute :order, Integer, default: ->(this, _) { this.payment }
+      attribute :order, Numeric, default: ->(this, _) { this.payment }
     end
 
     class Payment
@@ -60,7 +60,7 @@ module Wombat
 
       attribute :number, Integer
       attribute :status, String
-      attribute :amount, Integer
+      attribute :amount, Numeric
       attribute :payment_method, String
     end
 

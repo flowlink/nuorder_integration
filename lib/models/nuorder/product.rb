@@ -8,9 +8,9 @@ module NuOrder
       attribute :currency, String
       # The wholesale price in the given currency. Setting this to 0 will
       # disable the product within this currency.
-      attribute :wholesale, Integer
+      attribute :wholesale, Numeric
       # The retail price in the given currency.
-      attribute :retail, Integer, strict: false
+      attribute :retail, Numeric, strict: false
     end
 
     class Size
