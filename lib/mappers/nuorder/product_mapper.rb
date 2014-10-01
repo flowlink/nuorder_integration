@@ -6,13 +6,16 @@ module NuOrder
 
     def build
       @product ||= NuOrder::Product.new(
-        name: @wombat_product['name'],
-        style_number: 'style number',
-        color: 'color',
-        season: 'season',
-        department: 'department',
-        pricing: [pricing(@wombat_product)],
-        sizes: sizes
+        {
+          name: @wombat_product['name'],
+          style_number: 'style number',
+          color: 'color',
+          season: 'season',
+          department: 'department',
+          available_from: @wombat_product['available_on'],
+          pricing: [pricing(@wombat_product)],
+          sizes: sizes
+        }.compact
       )
     end
 
