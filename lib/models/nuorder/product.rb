@@ -34,7 +34,7 @@ module NuOrder
     # The name of this product.
     attribute :name, String
     # The style number.
-    attribute :style, String
+    attribute :style_number, String
     # The name of the color.
     attribute :color, String
     # The code for the given color.

@@ -3,7 +3,7 @@ module NuOrder
     def self.serialize(nuorder_product)
       output = {}
       [
-        :brand_id, :name, :style, :color, :color_code,
+        :brand_id, :name, :style_number, :color, :color_code,
         :season, :department, :division, :category,
         :available_from, :available_until, :order_closing
       ].each do |attribute|

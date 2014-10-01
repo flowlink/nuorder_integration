@@ -7,7 +7,7 @@ module NuOrder
     def build
       @product ||= NuOrder::Product.new(
         name: @wombat_product['name'],
-        style: 'style',
+        style_number: 'style number',
         color: 'color',
         season: 'season',
         department: 'department',
