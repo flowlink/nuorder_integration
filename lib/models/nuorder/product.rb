@@ -10,7 +10,7 @@ module NuOrder
       # disable the product within this currency.
       attribute :wholesale, Integer
       # The retail price in the given currency.
-      attribute :retail, Integer
+      attribute :retail, Integer, strict: false
     end
 
     class Size
@@ -29,9 +29,9 @@ module NuOrder
 
     include Virtus.value_object(strict: true)
 
-    attribute :_id, String
-    attribute :created_on, String
-    attribute :modified_on, String
+    attribute :_id, String, strict: false
+    attribute :created_on, String, strict: false
+    attribute :modified_on, String, strict: false
     # The external id.
     attribute :brand_id, String, strict: false
     # The name of this product.
@@ -41,21 +41,21 @@ module NuOrder
     # The name of the color.
     attribute :color, String
     # The code for the given color.
-    attribute :color_code, String
+    attribute :color_code, String, strict: false
     # The name of the primary season.
     attribute :season, String
     # The name of the department.
     attribute :department, String
     # The name of the division.
-    attribute :division, String
+    attribute :division, String, strict: false
     # The name of the subcategory.
-    attribute :category, String
+    attribute :category, String, strict: false
     # The date this product is available to order.
-    attribute :available_from, Date
+    attribute :available_from, Date, strict: false
     # The date this product is available to order until.
-    attribute :available_until, Date
+    attribute :available_until, Date, strict: false
     # The date orders are no longer accepted.
-    attribute :order_closing, Date
+    attribute :order_closing, Date, strict: false
 
     # This field is required at the root level for brands that do not utilize
     # unique pricing per size. It is required at the size level for brands
