@@ -29,9 +29,6 @@ module NuOrder
 
     include Virtus.value_object(strict: true)
 
-    attribute :_id, String, strict: false
-    attribute :created_on, String, strict: false
-    attribute :modified_on, String, strict: false
     # The external id.
     attribute :brand_id, String, strict: false
     # The name of this product.
