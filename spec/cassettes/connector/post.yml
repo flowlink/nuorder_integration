@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://sandbox1.nuorder.com/api/company/new
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1412167003,oauth_nonce=39ded9b225cef6b8,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=e198bdbc6e495dd65e8dd7ed051f0a8f5f0411ca
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Wed, 01 Oct 2014 12:36:44 GMT
+      Content-Type:
+      - text/plain
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+    body:
+      encoding: UTF-8
+      string: |
+        Oops, there was a problem!
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 12:36:44 GMT
+recorded_with: VCR 2.9.3

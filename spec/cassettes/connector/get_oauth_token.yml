@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1412164431,oauth_nonce=a96636ff321c495d,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=ZfhRqA5aDQfqTHPJ,oauth_signature=caf69029b66f53f221cab0907b5aad7822d5cb6e,oauth_verifier=xaFZ4r2GMSDY7jeW
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Wed, 01 Oct 2014 11:53:53 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '130'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1412164433137'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"639784797"'
+    body:
+      encoding: UTF-8
+      string: '{"oauth_token":"SvYnM8Qnj4d5rZUGDzf3m3b6","oauth_token_secret":"9ZzNtRPtD7jMAmcTSXwB9njRtwQBknvtMsCZb6DfmY6RCXH3znezpsfWRajG9pjR"}'
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 11:53:53 GMT
+recorded_with: VCR 2.9.3

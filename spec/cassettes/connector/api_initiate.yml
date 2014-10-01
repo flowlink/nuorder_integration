@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/initiate
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1412163773,oauth_nonce=aabba344978450b1,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=e36a9cca7439d69e549a66730d4e1198f693c93e,application_name=wombat_integration,oauth_callback=oob
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Wed, 01 Oct 2014 11:42:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '114'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1412163775061'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"-828416004"'
+    body:
+      encoding: UTF-8
+      string: '{"oauth_token":"ZfhRqA5aDQfqTHPJ","oauth_token_secret":"5E4HQZbWt5aSRJyaPhgDYSu2","oauth_callback_confirmed":true}'
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 11:42:55 GMT
+recorded_with: VCR 2.9.3
