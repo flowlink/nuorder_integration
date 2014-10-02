@@ -4,7 +4,7 @@ describe NuorderEndpoint do
   include_examples 'config hash'
 
   context 'webhooks' do
-    ['get_orders', 'cancel_order'].each do |path|
+    ['get_orders', 'cancel_order', 'add_product'].each do |path|
       describe path do
         let(:payload) do
           payload = Factories.send("#{path}_payload")
