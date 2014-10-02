@@ -16,8 +16,25 @@ describe NuorderEndpoint do
             post "/#{path}", payload.to_json, auth
             expect(last_response).to be_ok
             body = JSON.parse(last_response.body)
-            expect(body["request_id"]).to eq payload["request_id"]
+            expect(body['request_id']).to eq payload['request_id']
           end
+        end
+      end
+    end
+  end
+
+  context 'additional webhook specs' do
+    describe 'add_product' do
+      let(:payload) do
+        payload = Factories.send('add_product_payload')
+        payload.merge(parameters: config)
+      end
+
+      it 'returns new object id to wombat' do
+        VCR.use_cassette 'requests/add_product' do
+          post '/add_product', payload.to_json, auth
+          body = JSON.parse(last_response.body)
+          expect(body['products']).to eq([{ 'id' => payload['product']['id'], 'nuorder_id' => '542d177c9037859676643bd7' }])
         end
       end
     end
