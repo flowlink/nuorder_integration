@@ -23,6 +23,33 @@ class NuorderEndpoint < EndpointBase::Sinatra::Base
     end
   end
 
+  post '/add_product' do
+    begin
+      product = NuOrder::ProductMapper.new(@payload[:product]).build
+      product = NuOrder::ProductSerializer.serialize(product)
+      response = NuOrderServices::Product.new(@config).create!(product)
+      add_object :product, { id: @payload[:product][:id], nuorder_id: response['_id'] }
+      set_summary "Product #{@payload[:product][:id]} successfully created in NuOrder"
+      result 200
+    rescue Exception => e
+      log_exception(e)
+      result 500, e.message
+    end
+  end
+
+  post '/update_product' do
+    begin
+      product = NuOrder::ProductMapper.new(@payload[:product]).build
+      product = NuOrder::ProductSerializer.serialize(product)
+      response = NuOrderServices::Product.new(@config).update!(@payload[:product][:nuorder_id], product)
+      set_summary "Product #{@payload[:product][:id]} successfully updated in NuOrder"
+      result 200
+    rescue Exception => e
+      log_exception(e)
+      result 500, e.message
+    end
+  end
+
   post '/set_inventory' do
     begin
       inventory = NuOrder::InventoryMapper.new(@payload[:inventory]).build
