@@ -3,5 +3,13 @@ module NuOrderServices
     def find(id)
       nuorder.get("/api/product/#{id}")
     end
+
+    def create!(data)
+      nuorder.post('/api/product/new', data)
+    end
+
+    def update!(id, data)
+      nuorder.post("/api/product/#{id}", data)
+    end
   end
 end
