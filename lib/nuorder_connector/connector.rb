@@ -5,6 +5,7 @@ require 'securerandom'
 module NuOrderConnector
   class Connector
     include HTTParty
+    format :json
     attr_accessor :oauth_consumer_key, :oauth_consumer_secret, :endpoint, :oauth_verifier, :oauth_token, :oauth_token_secret
 
     def initialize(options)
@@ -49,7 +50,7 @@ module NuOrderConnector
     def post(url, params = nil)
       options = {
         headers: get_oauth_headers('POST', url),
-        body: params
+        body: params.to_json
       }
       response = self.class.post(url, options)
       validate_response(response)
@@ -58,7 +59,7 @@ module NuOrderConnector
     def put(url, params = nil)
       options = {
         headers: get_oauth_headers('PUT', url),
-        body: params
+        body: params.to_json
       }
       response = self.class.put(url, options)
       validate_response(response)
@@ -76,7 +77,9 @@ module NuOrderConnector
       nonce = SecureRandom.hex(8)
       signature = build_signature(method, url, time, nonce, addons)
       {
-        'Authorization' => "oAuth #{build_oauth(time, nonce, signature, addons)}"
+        'Authorization' => "oAuth #{build_oauth(time, nonce, signature, addons)}",
+        'Accept' => 'application/json',
+        'Content-Type' => 'application/json'
       }
     end
 
