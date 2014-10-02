@@ -14,6 +14,7 @@ module NuOrder
           season: 'season_tmp',
           department: 'department',
           category: 'category',
+          description: @wombat_product['description'],
           available_from: @wombat_product['available_on'],
           pricing: [pricing(@wombat_product)],
           sizes: sizes

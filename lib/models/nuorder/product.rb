@@ -37,6 +37,8 @@ module NuOrder
     attribute :style_number, String
     # The name of the color.
     attribute :color, String
+    # Product description
+    attribute :description, String
     # The code for the given color.
     attribute :color_code, String, strict: false
     # The name of the primary season.
