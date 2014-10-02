@@ -68,7 +68,7 @@ module NuOrderConnector
     private
 
     def validate_response(response)
-      return response if response.code == 200
+      return response if [200, 201].include?(response.code)
       raise "NuOrder API Error #{response.code} - #{response}"
     end
 
