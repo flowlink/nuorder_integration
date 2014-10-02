@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://sandbox1.nuorder.com/api/product/new
+    body:
+      encoding: UTF-8
+      string: '{"brand_id":"WOMBAT-NUORDER-SPREE-T-SHIRT","name":"Spree T-Shirt","style_number":"style_number","color":"color_tmp","season":"season_tmp","department":"department","category":"category","available_from":"2014-01-29","pricing":{"USD":{"wholesale":35,"retail":22.33}},"sizes":[{"size":"default","upc":"SPREE-T-SHIRT-TEST","pricing":{"USD":{"wholesale":35,"retail":22.33}}},{"size":"S","upc":"SPREE-T-SHIRT-TEST-S","pricing":{"USD":{"wholesale":39.99,"retail":22.33}}}]}'
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1412241275,oauth_nonce=36a7a92d8209b7d8,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=aea9338da153010f72460ed775f54ee974063868
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Thu, 02 Oct 2014 09:14:36 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '700'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1412241276334'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+    body:
+      encoding: UTF-8
+      string: '{"modified_on":"2014-10-02T09:14:36.317Z","brand_id":"wombat-nuorder-spree-t-shirt","name":"spree
+        t-shirt","style_number":"STYLE_NUMBER","color":"color_tmp","season":"season_tmp","department":"department","category":"category","available_from":"2014-01-29T00:00:00.000Z","schema_id":"541204aca01ceed9650486a2","sizes":[{"size":"default","upc":"SPREE-T-SHIRT-TEST"},{"size":"S","upc":"SPREE-T-SHIRT-TEST-S"}],"warehouses":[],"pricing":{"USD":{"wholesale":35,"retail":22.33}},"seasons":[],"created_on":"2014-10-02T09:14:36.314Z","size_groups":[],"available_now":false,"images":[],"cancelled":false,"active":true,"_id":"542d177c9037859676643bd7","description":"","available_until":"","order_closing":""}'
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 09:14:36 GMT
+recorded_with: VCR 2.9.3

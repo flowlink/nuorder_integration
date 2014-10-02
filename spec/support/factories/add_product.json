@@ -1,9 +1,9 @@
 {
   "request_id": "52f367367575e449c3000001",
   "product": {
-    "id": "SPREE-T-SHIRT",
+    "id": "WOMBAT-NUORDER-SPREE-T-SHIRT",
     "name": "Spree T-Shirt",
-    "sku": "SPREE-T-SHIRT",
+    "sku": "SPREE-T-SHIRT-TEST",
     "description": "Awesome Spree T-Shirt",
     "price": 35,
     "cost_price": 22.33,
@@ -37,7 +37,7 @@
     },
     "images": [
       {
-        "url": "http://dummyimage.com/600x400/000/fff.jpg&text=Spree T-Shirt",
+        "url": "http://dummyimage.com/600x400/000/fff.jpg&text=SpreeT-Shirt",
         "position": 1,
         "title": "Spree T-Shirt - Grey Small",
         "type": "thumbnail",
@@ -49,7 +49,7 @@
     ],
     "variants": [
       {
-        "sku": "SPREE-T-SHIRT-S",
+        "sku": "SPREE-T-SHIRT-TEST-S",
         "price": 39.99,
         "cost_price": 22.33,
         "quantity": 1,
@@ -59,7 +59,7 @@
         },
         "images": [
           {
-            "url": "http://dummyimage.com/600x400/000/fff.jpg&text=Spree T-Shirt Grey Small",
+            "url": "http://dummyimage.com/600x400/000/fff.jpg&text=SpreeT-ShirtGreySmall",
             "position": 1,
             "title": "Spree T-Shirt - Grey Small",
             "type": "thumbnail",

@@ -8,9 +8,10 @@ module NuOrder
       @product ||= NuOrder::Product.new(
         {
           name: @wombat_product['name'],
-          style_number: 'style number',
-          color: 'color',
-          season: 'season',
+          brand_id: @wombat_product['id'],
+          style_number: 'style_number',
+          color: 'color_tmp',
+          season: 'season_tmp',
           department: 'department',
           category: 'category',
           available_from: @wombat_product['available_on'],
