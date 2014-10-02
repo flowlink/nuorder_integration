@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://sandbox1.nuorder.com/api/inventory/541aa3f054f4a1d81aa878dd
+    body:
+      encoding: UTF-8
+      string: '{"inventory":[{"prebook":false,"warehouse":"default","wip":[{"name":"immediate","sizes":[{"size":"default","quantity":20}]}]}]}'
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1412243916,oauth_nonce=89089d80c3b19862,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=41f974e20b97fc1a219ec22437c436381165a0a6
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Thu, 02 Oct 2014 09:58:33 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1412243913748'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+    body:
+      encoding: UTF-8
+      string: '{"success":true}'
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 09:58:37 GMT
+recorded_with: VCR 2.9.3

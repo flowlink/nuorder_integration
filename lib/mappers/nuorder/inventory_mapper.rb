@@ -6,7 +6,7 @@ module NuOrder
 
     def build
       @inventory ||= NuOrder::Inventory.new(
-        warehouse: 'warehouse005',
+        warehouse: 'default',
         prebook: false,
         wip: build_wip
       )
@@ -17,7 +17,7 @@ module NuOrder
     def build_wip
       @wip ||= [
         NuOrder::Inventory::Wip.new(
-          name: @wombat_inventory['product_id'],
+          name: 'immediate',
           sizes: [
             NuOrder::Inventory::Wip::Size.new(
               size: 'default',
