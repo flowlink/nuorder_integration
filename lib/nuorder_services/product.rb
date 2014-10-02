@@ -5,7 +5,7 @@ module NuOrderServices
     end
 
     def create!(data)
-      nuorder.post('/api/product/new', data)
+      nuorder.put('/api/product/new', data)
     end
 
     def update!(id, data)

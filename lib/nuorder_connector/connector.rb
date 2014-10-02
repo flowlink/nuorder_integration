@@ -55,6 +55,15 @@ module NuOrderConnector
       validate_response(response)
     end
 
+    def put(url, params = nil)
+      options = {
+        headers: get_oauth_headers('PUT', url),
+        body: params
+      }
+      response = self.class.put(url, options)
+      validate_response(response)
+    end
+
     private
 
     def validate_response(response)
