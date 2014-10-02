@@ -12,6 +12,7 @@ module NuOrder
           color: 'color',
           season: 'season',
           department: 'department',
+          category: 'category',
           available_from: @wombat_product['available_on'],
           pricing: [pricing(@wombat_product)],
           sizes: sizes
