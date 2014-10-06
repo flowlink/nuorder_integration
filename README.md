@@ -39,3 +39,6 @@ Below are listed ways to set it ordered by priority, starting with highest:
 
 If you want to run this service in NuOrders sandbox mode you should set endpoint url
 to e.g. `http://sandbox1.nuorder.com`
+
+
+*Copyright (c) 2014 Netguru. See LICENSE for further details.*
