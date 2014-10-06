@@ -41,4 +41,4 @@ If you want to run this service in NuOrders sandbox mode you should set endpoint
 to e.g. `http://sandbox1.nuorder.com`
 
 
-*Copyright (c) 2014 Netguru. See LICENSE for further details.*
+Copyright (c) 2014 [Netguru](https//netguru.co). See LICENSE for further details.
