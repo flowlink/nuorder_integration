@@ -1,10 +1,9 @@
 {
   "request_id": "52f367367575e449c3000001",
   "inventory": {
-    "id": 1,
+    "id": "wombat-nuorder-spree-t-shirt",
     "location": "default",
-    "product_id": "red coat",
-    "nuorder_id": "541aa3f054f4a1d81aa878dd",
+    "product_id": "wombat-nuorder-spree-t-shirt",
     "quantity": 20
   },
   "parameters": {}

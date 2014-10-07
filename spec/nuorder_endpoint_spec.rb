@@ -37,6 +37,14 @@ describe NuorderEndpoint do
           expect(body['products']).to eq([{ 'id' => payload['product']['id'], 'nuorder_id' => '542d177c9037859676643bd7' }])
         end
       end
+
+      it 'returns new inventory object to wombat' do
+        VCR.use_cassette 'requests/add_product' do
+          post '/add_product', payload.to_json, auth
+          body = JSON.parse(last_response.body)
+          expect(body['inventories']).to eq([{ 'id' => 'WOMBAT-NUORDER-SPREE-T-SHIRT', 'product_id' => 'wombat-nuorder-spree-t-shirt', 'quantity' => 0 }])
+        end
+      end
     end
   end
 end
