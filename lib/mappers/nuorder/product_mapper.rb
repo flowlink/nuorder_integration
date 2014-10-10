@@ -9,9 +9,9 @@ module NuOrder
         {
           name: @wombat_product['name'],
           brand_id: @wombat_product['id'],
-          style_number: 'style_number',
-          color: 'color_tmp',
-          season: 'season_tmp',
+          style_number: @wombat_product['style_number'],
+          color: @wombat_product['color'],
+          season: @wombat_product['season'],
           department: 'department',
           category: 'category',
           description: @wombat_product['description'],
