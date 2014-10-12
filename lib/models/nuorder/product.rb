@@ -27,10 +27,10 @@ module NuOrder
       attribute :pricing, Array[Pricing]
     end
 
-    include Virtus.value_object(strict: true)
+    include Virtus.value_object
 
     # The external id.
-    attribute :brand_id, String, strict: false
+    attribute :brand_id, String
     # The name of this product.
     attribute :name, String
     # The style number.
@@ -40,21 +40,21 @@ module NuOrder
     # Product description
     attribute :description, String
     # The code for the given color.
-    attribute :color_code, String, strict: false
+    attribute :color_code, String
     # The name of the primary season.
     attribute :season, String
     # The name of the department.
     attribute :department, String
     # The name of the division.
-    attribute :division, String, strict: false
+    attribute :division, String
     # The name of the subcategory.
-    attribute :category, String, strict: false
+    attribute :category, String
     # The date this product is available to order.
-    attribute :available_from, Date, strict: false
+    attribute :available_from, Date
     # The date this product is available to order until.
-    attribute :available_until, Date, strict: false
+    attribute :available_until, Date
     # The date orders are no longer accepted.
-    attribute :order_closing, Date, strict: false
+    attribute :order_closing, Date
 
     # This field is required at the root level for brands that do not utilize
     # unique pricing per size. It is required at the size level for brands

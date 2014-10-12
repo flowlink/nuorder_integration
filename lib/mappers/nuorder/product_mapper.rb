@@ -12,7 +12,7 @@ module NuOrder
           style_number: @wombat_product['style_number'],
           color: @wombat_product['color'],
           season: @wombat_product['season'],
-          department: 'department',
+          department: @wombat_product['department'],
           category: 'category',
           description: @wombat_product['description'],
           available_from: @wombat_product['available_on'],

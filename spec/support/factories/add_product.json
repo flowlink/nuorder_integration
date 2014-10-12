@@ -3,6 +3,9 @@
   "product": {
     "id": "WOMBAT-NUORDER-SPREE-T-SHIRT",
     "name": "Spree T-Shirt",
+    "style_number": "style123",
+    "color": "color123",
+    "season": "season123",
     "sku": "SPREE-T-SHIRT-TEST",
     "description": "Awesome Spree T-Shirt",
     "price": 35,
