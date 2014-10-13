@@ -67,7 +67,7 @@ class NuorderEndpoint < EndpointBase::Sinatra::Base
 
   post '/cancel_order' do
     begin
-      NuOrderServices::Order.new(@config).cancel!(@payload[:nuorder_id])
+      NuOrderServices::Order.new(@config).cancel!(@payload[:order][:nuorder_id])
       set_summary "Order has been cancelled in NuOrder"
       result 200
     rescue Exception => e
