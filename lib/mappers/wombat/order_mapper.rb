@@ -10,7 +10,7 @@ module Wombat
         nuorder_id: @nuorder_order['_id'],
         status: 'complete',
         channel: 'nuorder',
-        email: 'spree@example.com', # TODO: where to find this email?
+        email: '', # TODO: where to find this email?
         currency: @nuorder_order['currency_code'],
         placed_on: @nuorder_order['created_on'],
         totals: totals,
