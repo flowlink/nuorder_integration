@@ -48,24 +48,24 @@ module NuOrderConnector
     end
 
     def post(url, params = nil)
-      options = {
-        headers: get_oauth_headers('POST', url),
-        body: params.to_json
-      }
-      response = self.class.post(url, options)
+      response = self.class.post(url, build_params('POST', url, params))
       validate_response(response)
     end
 
     def put(url, params = nil)
-      options = {
-        headers: get_oauth_headers('PUT', url),
-        body: params.to_json
-      }
-      response = self.class.put(url, options)
+      response = self.class.put(url, build_params('PUT', url, params))
       validate_response(response)
     end
 
     private
+
+    def build_params(type, url, params = nil)
+      options = {
+        headers: get_oauth_headers(type, url),
+      }
+      options.merge!( { body: params.to_json } ) if params
+      options
+    end
 
     def validate_response(response)
       return response if [200, 201].include?(response.code)
