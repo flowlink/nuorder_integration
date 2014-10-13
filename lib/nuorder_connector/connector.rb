@@ -69,7 +69,7 @@ module NuOrderConnector
 
     def validate_response(response)
       return response if [200, 201].include?(response.code)
-      raise "NuOrder API Error #{response.code}. #{response.message}"
+      raise "NuOrder API Error #{response.code}. #{response["message"]}"
     end
 
     def get_oauth_headers(method, url, addons = nil)
