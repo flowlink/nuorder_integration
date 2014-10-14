@@ -2,24 +2,26 @@ require 'spec_helper'
 
 describe Wombat::OrderMapper do
   include_examples 'config hash'
-  subject { described_class }
   let(:order_service) { NuOrderServices::Order.new(config) }
+  let(:company_service) { NuOrderServices::Company.new(config) }
 
   it 'parses valid order successfully' do
-    VCR.use_cassette('nuorder_order_all') do
+    VCR.use_cassette('mappers/wombat/order') do
       response = order_service.all('pending')
       response.each do |order|
-        expect { subject.new(order).build }.to_not raise_error
+        company = company_service.find(order['retailer']['_id'])
+        expect { described_class.new(order, company).build }.to_not raise_error
       end
     end
   end
 
   it 'does not parse invalid order' do
-    VCR.use_cassette('nuorder_order_all') do
+    VCR.use_cassette('mappers/wombat/order') do
       response = order_service.all('pending')
       response.each do |order|
         invalid_order = order.delete(:_id)
-        expect { subject.new(invalid_order).build }.to raise_error
+        company = company_service.find(order['retailer']['_id'])
+        expect { described_class.new(invalid_order, company).build }.to raise_error
       end
     end
   end

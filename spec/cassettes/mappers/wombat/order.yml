@@ -1,0 +1,338 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/orders/pending/detail
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1413288752,oauth_nonce=12451a2006a5534c,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=77938be618e4f19e650c7fe573988fd14d158e53
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Tue, 14 Oct 2014 12:12:28 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '7892'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1413288748980'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"-330029830"'
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"542aa9d7f28a9cf91a1a92f7","additional_percentage":0,"billing_address":{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737"},"created_on":"2014-09-30T13:02:15.868Z","currency_code":"USD","customer_po_number":"","discount":0,"easy_order_ready":false,"edited":false,"existing_pdf_original":"542aa9d7f28a9cf91a1a92f6","line_items":[{"product":{"_id":"541aa3f054f4a1d81aa878dd","style_number":"2","color":"red","color_code":""},"sizes":[{"size":"M","quantity":2,"price":12}]},{"product":{"_id":"541aa3c754f4a1d81aa878d2","style_number":"1","color":"white","color_code":""},"sizes":[{"size":"M","quantity":5,"price":10}]}],"modified_on":"2014-09-30T13:02:15.887Z","notes":"","order_number":"100528","order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek
+        buszman"},"schema_id":"541204aca01ceed9650486a4","shipping_address":{"ref":"542164c943c0433f2308486c","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737","code":"1234"},"split":false,"status":"pending","submitted_by":"web","total":74,"rep_name":"Sameer","rep_code":"","start_ship":"2014-09-30T00:00:00.000Z","end_ship":"2014-10-30T00:00:00.000Z"},{"_id":"542a97d89470d2861aa50557","additional_percentage":0,"billing_address":{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737"},"created_on":"2014-09-30T11:45:28.455Z","currency_code":"USD","customer_po_number":"","discount":0,"easy_order_ready":false,"edited":false,"existing_pdf_original":"542a97d89470d2861aa50556","line_items":[{"product":{"_id":"541aa3f054f4a1d81aa878dd","style_number":"2","color":"red","color_code":""},"sizes":[{"size":"M","quantity":30,"price":12}]}],"modified_on":"2014-09-30T11:45:28.469Z","notes":"","order_number":"100526","order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek
+        buszman"},"schema_id":"541204aca01ceed9650486a4","shipping_address":{"ref":"542164c943c0433f2308486c","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737","code":"1234"},"split":false,"status":"pending","submitted_by":"web","total":360,"rep_name":"Sameer","rep_code":"","start_ship":"2014-09-30T00:00:00.000Z","end_ship":"2014-10-30T00:00:00.000Z"},{"modified_on":"2014-10-14T11:16:05.698Z","order_number":"100596-1","customer_po_number":"","status":"pending","currency_code":"USD","discount":0,"additional_percentage":0,"notes":"","submitted_by":"web","schema_id":"541204aca01ceed9650486a4","total":140,"existing_pdf_original":"543d05f58c60318201c2326d","existing_pdf_linesheet":"543d05f58c60318201c2326e","line_items":[{"product":{"_id":"543bcdea9016f9ea6501b8cc","style_number":"TEST-STYLE","color":"white","color_code":"","brand_id":"spree-t-test"},"sizes":[{"size":"default","quantity":1,"price":35,"upc":"SPREE-T-SHIRT"},{"size":"S","quantity":1,"price":35,"upc":"SPREE-T-SHIRT-S"}]},{"product":{"_id":"543bc5519016f9ea6501ae7c","style_number":"STYLEX3","color":"red","color_code":"","brand_id":"spree-t-shirt732197"},"sizes":[{"size":"default","quantity":2,"price":35,"upc":"SPREE-T-SHIRT"}],"warehouse":"default"}],"created_on":"2014-10-14T11:16:05.673Z","edited":false,"shipping_address":{"ref":"543bda8f9633a0006036382c","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737","code":"1234"},"billing_address":{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737"},"order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek
+        buszman"},"easy_order_ready":false,"split":false,"_id":"543d05f58c60318201c2326f","rep_name":"Sameer","rep_code":"","start_ship":"2014-10-14T00:00:00.000Z","end_ship":"2014-11-13T00:00:00.000Z"},{"modified_on":"2014-10-14T11:14:39.511Z","order_number":"100589-1","customer_po_number":"","status":"pending","currency_code":"USD","discount":0,"additional_percentage":0,"notes":"","submitted_by":"web","schema_id":"541204aca01ceed9650486a4","total":70,"existing_pdf_original":"543d059f8c60318201c231c3","existing_pdf_linesheet":"543d059f8c60318201c231c4","line_items":[{"product":{"_id":"543bc5519016f9ea6501ae7c","style_number":"STYLEX3","color":"red","color_code":"","brand_id":"spree-t-shirt732197"},"sizes":[{"size":"default","quantity":2,"price":35,"upc":"SPREE-T-SHIRT"}],"warehouse":"default"}],"created_on":"2014-10-14T11:14:39.506Z","edited":false,"shipping_address":{"ref":"543bda8f9633a0006036382c","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737","code":"1234"},"billing_address":{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737"},"order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek
+        buszman"},"easy_order_ready":false,"split":false,"_id":"543d059f8c60318201c231c5","rep_name":"Sameer","rep_code":"","start_ship":"2014-10-14T00:00:00.000Z","end_ship":"2014-11-13T00:00:00.000Z"},{"_id":"542a9fdbf28a9cf91a1a8a60","additional_percentage":0,"billing_address":{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737"},"created_on":"2014-09-30T12:19:39.759Z","currency_code":"USD","customer_po_number":"","discount":0,"easy_order_ready":false,"edited":false,"existing_pdf_original":"542a9fdbf28a9cf91a1a8a5f","line_items":[{"product":{"_id":"541aa3f054f4a1d81aa878dd","style_number":"2","color":"red","color_code":""},"sizes":[{"size":"M","quantity":1,"price":12}]},{"product":{"_id":"541aa3c754f4a1d81aa878d2","style_number":"1","color":"white","color_code":""},"sizes":[{"size":"M","quantity":2,"price":10}]}],"modified_on":"2014-09-30T12:19:39.774Z","notes":"","order_number":"100527","order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek
+        buszman"},"schema_id":"541204aca01ceed9650486a4","shipping_address":{"ref":"542164c943c0433f2308486c","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737","code":"1234"},"split":false,"status":"pending","submitted_by":"web","total":32,"rep_name":"Sameer","rep_code":"","start_ship":"2014-09-30T00:00:00.000Z","end_ship":"2014-10-30T00:00:00.000Z"},{"modified_on":"2014-10-14T11:14:39.527Z","order_number":"100589-2","customer_po_number":"","status":"pending","currency_code":"USD","discount":0,"additional_percentage":0,"notes":"","submitted_by":"web","schema_id":"541204aca01ceed9650486a4","total":40,"existing_pdf_original":"543d059f8c60318201c231c9","existing_pdf_linesheet":"543d059f8c60318201c231ca","line_items":[{"product":{"_id":"543bd2b09016f9ea6501bb82","style_number":"STYLEX34","color":"blue","color_code":"","brand_id":"nuorder-t-shirt650293"},"sizes":[{"size":"default","quantity":1,"price":40,"upc":"NUORDER-T-SHIRT"}],"warehouse":"default"}],"created_on":"2014-10-14T11:14:39.513Z","edited":false,"shipping_address":{"ref":"543bda8f9633a0006036382c","display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737","code":"1234"},"billing_address":{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","country":"Poland","city":"Poznan","zip":"61-737"},"order_tags":[],"retailer":{"_id":"541c2769663e94c8129f4631","retailer_name":"netguru","retailer_code":"","buyer_name":"marek
+        buszman"},"easy_order_ready":false,"split":false,"_id":"543d059f8c60318201c231cb","rep_name":"Sameer","rep_code":"","start_ship":"2014-10-13T00:00:00.000Z","end_ship":"2014-11-12T00:00:00.000Z"}]'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 12:12:34 GMT
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/company/541c2769663e94c8129f4631
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1413288754,oauth_nonce=d5d76cd3f9b6aae9,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=b6ad036a3cd8ed8e38cd6c4bcd71ac560c2abe81
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Tue, 14 Oct 2014 12:12:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1607'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1413288749748'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"1265551432"'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"541c2769663e94c8129f4631","addresses":[{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","city":"Poznan","zip":"61-737","country":"Poland","billing_code":"1234"}],"allow_bulk":false,"created_on":"2014-09-19T12:54:01.111Z","currency_code":"USD","discount":0,"modified_on":"2014-10-13T13:58:39.705Z","name":"netguru","phone":"123123123","schema_id":"541204aca01ceed9650486a3","user_connections":[{"_id":"541c2772663e94c8129f4660","email":"marek.buszman@netguru.co","linesheets":[],"name":"Marek
+        Buszman","phone_cell":"+48511511511","phone_office":"+48511511511","product":{"recommendations":[],"picks":[]},"ref":"541c2772663e94c8129f4660","reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"542ab7d2f28a9cf91a1aa714"}],"title":"Foo"},{"ref":"543bd3ff9016f9ea6501bc67","name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc67","linesheets":[],"product":{"recommendations":[],"picks":[]},"reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc6d"}]}],"warehouse":"541204ada01ceed9650486d2","default_discount":0,"payment_terms":"","credit_status":"","code":"","buyers":[{"name":"Marek
+        Buszman","email":"marek.buszman@netguru.co","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""},{"name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""}]}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 12:12:35 GMT
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/company/541c2769663e94c8129f4631
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1413288755,oauth_nonce=eb4f91e57fca7df9,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=1f6c3ffee313eb613977a6886d9d86d0a8f7adda
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Tue, 14 Oct 2014 12:12:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1607'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1413288750574'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"1265551432"'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"541c2769663e94c8129f4631","addresses":[{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","city":"Poznan","zip":"61-737","country":"Poland","billing_code":"1234"}],"allow_bulk":false,"created_on":"2014-09-19T12:54:01.111Z","currency_code":"USD","discount":0,"modified_on":"2014-10-13T13:58:39.705Z","name":"netguru","phone":"123123123","schema_id":"541204aca01ceed9650486a3","user_connections":[{"_id":"541c2772663e94c8129f4660","email":"marek.buszman@netguru.co","linesheets":[],"name":"Marek
+        Buszman","phone_cell":"+48511511511","phone_office":"+48511511511","product":{"recommendations":[],"picks":[]},"ref":"541c2772663e94c8129f4660","reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"542ab7d2f28a9cf91a1aa714"}],"title":"Foo"},{"ref":"543bd3ff9016f9ea6501bc67","name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc67","linesheets":[],"product":{"recommendations":[],"picks":[]},"reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc6d"}]}],"warehouse":"541204ada01ceed9650486d2","default_discount":0,"payment_terms":"","credit_status":"","code":"","buyers":[{"name":"Marek
+        Buszman","email":"marek.buszman@netguru.co","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""},{"name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""}]}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 12:12:35 GMT
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/company/541c2769663e94c8129f4631
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1413288755,oauth_nonce=cecaed084093b7d3,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=92c5ea09acf1f791728c20869c5333055b3e2260
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Tue, 14 Oct 2014 12:12:31 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1607'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1413288751153'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"1265551432"'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"541c2769663e94c8129f4631","addresses":[{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","city":"Poznan","zip":"61-737","country":"Poland","billing_code":"1234"}],"allow_bulk":false,"created_on":"2014-09-19T12:54:01.111Z","currency_code":"USD","discount":0,"modified_on":"2014-10-13T13:58:39.705Z","name":"netguru","phone":"123123123","schema_id":"541204aca01ceed9650486a3","user_connections":[{"_id":"541c2772663e94c8129f4660","email":"marek.buszman@netguru.co","linesheets":[],"name":"Marek
+        Buszman","phone_cell":"+48511511511","phone_office":"+48511511511","product":{"recommendations":[],"picks":[]},"ref":"541c2772663e94c8129f4660","reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"542ab7d2f28a9cf91a1aa714"}],"title":"Foo"},{"ref":"543bd3ff9016f9ea6501bc67","name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc67","linesheets":[],"product":{"recommendations":[],"picks":[]},"reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc6d"}]}],"warehouse":"541204ada01ceed9650486d2","default_discount":0,"payment_terms":"","credit_status":"","code":"","buyers":[{"name":"Marek
+        Buszman","email":"marek.buszman@netguru.co","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""},{"name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""}]}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 12:12:36 GMT
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/company/541c2769663e94c8129f4631
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1413288756,oauth_nonce=7520593ae33b09c8,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=7ec9c9b93333685e0825d0b532bf55fe959725e1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Tue, 14 Oct 2014 12:12:31 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1607'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1413288751627'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"1265551432"'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"541c2769663e94c8129f4631","addresses":[{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","city":"Poznan","zip":"61-737","country":"Poland","billing_code":"1234"}],"allow_bulk":false,"created_on":"2014-09-19T12:54:01.111Z","currency_code":"USD","discount":0,"modified_on":"2014-10-13T13:58:39.705Z","name":"netguru","phone":"123123123","schema_id":"541204aca01ceed9650486a3","user_connections":[{"_id":"541c2772663e94c8129f4660","email":"marek.buszman@netguru.co","linesheets":[],"name":"Marek
+        Buszman","phone_cell":"+48511511511","phone_office":"+48511511511","product":{"recommendations":[],"picks":[]},"ref":"541c2772663e94c8129f4660","reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"542ab7d2f28a9cf91a1aa714"}],"title":"Foo"},{"ref":"543bd3ff9016f9ea6501bc67","name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc67","linesheets":[],"product":{"recommendations":[],"picks":[]},"reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc6d"}]}],"warehouse":"541204ada01ceed9650486d2","default_discount":0,"payment_terms":"","credit_status":"","code":"","buyers":[{"name":"Marek
+        Buszman","email":"marek.buszman@netguru.co","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""},{"name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""}]}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 12:12:36 GMT
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/company/541c2769663e94c8129f4631
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1413288756,oauth_nonce=c3691e458e153596,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=6b6854a35cadac0136488c04f94928ed5ab5258a
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Tue, 14 Oct 2014 12:12:32 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1607'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1413288752223'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"1265551432"'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"541c2769663e94c8129f4631","addresses":[{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","city":"Poznan","zip":"61-737","country":"Poland","billing_code":"1234"}],"allow_bulk":false,"created_on":"2014-09-19T12:54:01.111Z","currency_code":"USD","discount":0,"modified_on":"2014-10-13T13:58:39.705Z","name":"netguru","phone":"123123123","schema_id":"541204aca01ceed9650486a3","user_connections":[{"_id":"541c2772663e94c8129f4660","email":"marek.buszman@netguru.co","linesheets":[],"name":"Marek
+        Buszman","phone_cell":"+48511511511","phone_office":"+48511511511","product":{"recommendations":[],"picks":[]},"ref":"541c2772663e94c8129f4660","reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"542ab7d2f28a9cf91a1aa714"}],"title":"Foo"},{"ref":"543bd3ff9016f9ea6501bc67","name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc67","linesheets":[],"product":{"recommendations":[],"picks":[]},"reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc6d"}]}],"warehouse":"541204ada01ceed9650486d2","default_discount":0,"payment_terms":"","credit_status":"","code":"","buyers":[{"name":"Marek
+        Buszman","email":"marek.buszman@netguru.co","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""},{"name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""}]}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 12:12:37 GMT
+- request:
+    method: get
+    uri: http://sandbox1.nuorder.com/api/company/541c2769663e94c8129f4631
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - oAuth oauth_consumer_key=mduVpZauWaTZTjg64UQd3DRX,oauth_timestamp=1413288757,oauth_nonce=f71ed96489a1805a,oauth_version=1.0,oauth_signature_method=HMAC-SHA1,oauth_token=F4bf5URBG5fAvHmKegPZW5ZY,oauth_signature=53b05367aa681ed86de0dca1fc8f6832e1f3918d
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Tue, 14 Oct 2014 12:12:33 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1607'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Request-Token:
+      - '1413288753027'
+      Cache-Control:
+      - private,max-age=0, must-revalidate
+      Etag:
+      - '"1265551432"'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"541c2769663e94c8129f4631","addresses":[{"display_name":"ul.
+        27 Grudnia 3","line_1":"ul. 27 Grudnia 3","city":"Poznan","zip":"61-737","country":"Poland","billing_code":"1234"}],"allow_bulk":false,"created_on":"2014-09-19T12:54:01.111Z","currency_code":"USD","discount":0,"modified_on":"2014-10-13T13:58:39.705Z","name":"netguru","phone":"123123123","schema_id":"541204aca01ceed9650486a3","user_connections":[{"_id":"541c2772663e94c8129f4660","email":"marek.buszman@netguru.co","linesheets":[],"name":"Marek
+        Buszman","phone_cell":"+48511511511","phone_office":"+48511511511","product":{"recommendations":[],"picks":[]},"ref":"541c2772663e94c8129f4660","reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"542ab7d2f28a9cf91a1aa714"}],"title":"Foo"},{"ref":"543bd3ff9016f9ea6501bc67","name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc67","linesheets":[],"product":{"recommendations":[],"picks":[]},"reps":[{"ref":"54120546a01ceed9650486f3","name":"Sameer","email":"sameer@spreecommerce.com","_id":"543bd3ff9016f9ea6501bc6d"}]}],"warehouse":"541204ada01ceed9650486d2","default_discount":0,"payment_terms":"","credit_status":"","code":"","buyers":[{"name":"Marek
+        Buszman","email":"marek.buszman@netguru.co","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""},{"name":"Sameer
+        Gulati","email":"sameer+1@spreecommerce.com","title":"","phone_cell":"","phone_office":"","reps":[{"name":"Sameer","email":"sameer@spreecommerce.com"}],"last_viewed":""}]}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 12:12:38 GMT
+recorded_with: VCR 2.9.3

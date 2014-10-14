@@ -1,21 +1,24 @@
 module Wombat
   class OrderMapper
-    def initialize(nuorder_order)
-      @nuorder_order = nuorder_order.dup.freeze
+    attr_reader :nuorder_order, :nuorder_company
+
+    def initialize(order, company)
+      @nuorder_order = order.dup.freeze
+      @nuorder_company = company.dup.freeze
     end
 
     def build
       @order ||= Wombat::Order.new(
-        id: @nuorder_order['order_number'],
-        nuorder_id: @nuorder_order['_id'],
+        id: nuorder_order['order_number'],
+        nuorder_id: nuorder_order['_id'],
         status: 'complete',
         channel: 'nuorder',
-        email: '', # TODO: where to find this email?
-        currency: @nuorder_order['currency_code'],
-        placed_on: @nuorder_order['created_on'],
+        email: buyers_email,
+        currency: nuorder_order['currency_code'],
+        placed_on: nuorder_order['created_on'],
         totals: totals,
-        rep_name: @nuorder_order['rep_name'],
-        rep_code: @nuorder_order['rep_code'],
+        rep_name: nuorder_order['rep_name'],
+        rep_code: nuorder_order['rep_code'],
         retailer: retailer,
         line_items: line_items,
         adjustments: adjustments,
@@ -30,6 +33,18 @@ module Wombat
     end
 
     private
+
+    def buyer
+      nuorder_company.fetch('user_connections', []).first || {}
+    end
+
+    def buyers_email
+      buyer['email'] || ''
+    end
+
+    def buyers_phone
+      buyer['phone_cell'] || buyer['phone_office'] || ''
+    end
 
     def totals
       @totals ||= Wombat::Order::OrderTotal.new(
@@ -50,7 +65,7 @@ module Wombat
     end
 
     def line_items
-      @line_items ||= @nuorder_order['line_items'].try(:map) do |line_item|
+      @line_items ||= nuorder_order['line_items'].try(:map) do |line_item|
         price = 0
         quantity = 0
         line_item['sizes'].try(:each) do |size|
@@ -113,7 +128,7 @@ module Wombat
     end
 
     def split_customers_name
-      @nuorder_order.fetch('retailer', {})['buyer_name'].try(:split, ' ', 2)
+      nuorder_order.fetch('retailer', {})['buyer_name'].try(:split, ' ', 2)
     end
 
     def customers_first_name
@@ -125,15 +140,15 @@ module Wombat
     end
 
     def nuorder_shipping_address
-      @nuroder_shipping_address ||= @nuorder_order.fetch('shipping_address', {})
+      @nuroder_shipping_address ||= nuorder_order.fetch('shipping_address', {})
     end
 
     def nuorder_billing_address
-      @nuorder_billing_address ||= @nuorder_order.fetch('billing_address', {})
+      @nuorder_billing_address ||= nuorder_order.fetch('billing_address', {})
     end
 
     def nuorder_retailer
-      @nuorder_retailer ||= @nuorder_order.fetch('retailer', {})
+      @nuorder_retailer ||= nuorder_order.fetch('retailer', {})
     end
   end
 end

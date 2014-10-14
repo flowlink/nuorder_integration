@@ -13,8 +13,14 @@ class NuorderEndpoint < EndpointBase::Sinatra::Base
     begin
       order_service = NuOrderServices::Order.new(@config)
       orders = order_service.all(['edited', 'approved'])
-      orders.map! { |nuorder_order| Wombat::OrderMapper.new(nuorder_order).build }
-      orders.each { |order| add_object :order, Wombat::OrderSerializer.serialize(order) }
+      company_service = NuOrderServices::Company.new(@config)
+      orders.map! do |nuorder_order|
+        company = company_service.find(orders.first['retailer']['_id'])
+        Wombat::OrderMapper.new(nuorder_order, company).build
+      end
+      orders.each do |order|
+        add_object :order, Wombat::OrderSerializer.serialize(order)
+      end
       order_service.process!(orders.map(&:nuorder_id))
       result 200
     rescue Exception => e
