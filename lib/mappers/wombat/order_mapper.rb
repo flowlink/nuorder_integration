@@ -59,7 +59,7 @@ module Wombat
         end
 
         Wombat::Order::LineItem.new(
-          product_id: 'SPREE T-SHIRT', # TODO: what it should be?
+          product_id: line_item['upc'],
           name: 'Spree t-shirt', # TODO: make another api call to get it?
           quantity: quantity,
           price: price,

@@ -27,7 +27,7 @@ module Wombat
       include Virtus.value_object(strict: true)
 
       # Unique identifier of product
-      attribute :product_id, String
+      attribute :product_id, String, strict: false
       # Product’s name
       attribute :name, String
       # Quantity ordered
