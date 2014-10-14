@@ -12,7 +12,7 @@ describe NuorderEndpoint do
         end
 
         it 'works' do
-          VCR.use_cassette "requests/#{path}" do
+          VCR.use_cassette "requests/#{path}", record: :new_episodes do
             post "/#{path}", payload.to_json, auth
             expect(last_response).to be_ok
             body = JSON.parse(last_response.body)

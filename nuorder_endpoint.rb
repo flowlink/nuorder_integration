@@ -14,9 +14,9 @@ class NuorderEndpoint < EndpointBase::Sinatra::Base
       order_service = NuOrderServices::Order.new(@config)
       orders = order_service.all(['edited', 'approved'])
       company_service = NuOrderServices::Company.new(@config)
-      orders.map! do |nuorder_order|
-        company = company_service.find(orders.first['retailer']['_id'])
-        Wombat::OrderMapper.new(nuorder_order, company).build
+      orders.map! do |order|
+        company = company_service.find(order['retailer']['_id'])
+        Wombat::OrderMapper.new(order, company).build
       end
       orders.each do |order|
         add_object :order, Wombat::OrderSerializer.serialize(order)
