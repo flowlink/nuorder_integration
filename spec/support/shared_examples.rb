@@ -1,8 +1,8 @@
 test_config_hash = {
-  nuorder_consumer_key: 'mduVpZauWaTZTjg64UQd3DRX',
-  nuorder_consumer_secret: 'gqRWTrrPJrEtwEUWmBcE9atwZr7Y8Kdxjras3DVAzrvqWRhkVme2JaR4VDq64c9c',
-  nuorder_token: 'F4bf5URBG5fAvHmKegPZW5ZY',
-  nuorder_token_secret: 'M4ZQU3bruFcCnPya2fVcP6jtykMsXQCH6bSvxKy3jQ4syeT6AASmB83RHUS47vV7',
+  nuorder_consumer_key: ENV['NUORDER_CONSUMER_KEY'],
+  nuorder_consumer_secret: ENV['NUORDER_CONSUMER_SECRET'],
+  nuorder_token: ENV['NUORDER_TOKEN'],
+  nuorder_token_secret: ENV['NUORDER_TOKEN_SECRET'],
   endpoint: 'http://sandbox1.nuorder.com'
 }.with_indifferent_access
 

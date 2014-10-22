@@ -2,7 +2,9 @@ require 'rubygems'
 require 'bundler'
 require 'pry'
 ENV['APP_ENV'] = 'test'
+ENV['ENDPOINT_KEY'] = '123'
 Bundler.require(:default, :test)
+Dotenv.load
 
 require File.join(File.dirname(__FILE__), '..', 'config/environment')
 require File.join(File.dirname(__FILE__), '..', 'nuorder_endpoint')
@@ -17,6 +19,11 @@ VCR.configure do |config|
   config.allow_http_connections_when_no_cassette = true
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
+
+  config.filter_sensitive_data('spree_cons_key')    { |_| ENV['NUORDER_CONSUMER_KEY'] }
+  config.filter_sensitive_data('spree_cons_secret') { |_| ENV['NUORDER_CONSUMER_SECRET'] }
+  config.filter_sensitive_data('spree_token')       { |_| ENV['NUORDER_TOKEN'] }
+  config.filter_sensitive_data('spree_secret')      { |_| ENV['NUORDER_TOKEN_SECRET'] }
 end
 
 RSpec.configure do |config|

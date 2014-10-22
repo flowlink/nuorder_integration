@@ -4,6 +4,8 @@ require 'endpoint_base'
 require 'nuorder_integration'
 
 class NuorderEndpoint < EndpointBase::Sinatra::Base
+  endpoint_key ENV['ENDPOINT_KEY']
+
   configure :development do
     register Sinatra::Reloader
   end
