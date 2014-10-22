@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.0.0'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
@@ -10,9 +10,10 @@ gem 'httparty'
 gem 'virtus'
 gem 'activesupport'
 
-group :development do
+group :development, :test do
   gem 'rake'
   gem 'pry'
+  gem 'dotenv'
 end
 
 group :test do
