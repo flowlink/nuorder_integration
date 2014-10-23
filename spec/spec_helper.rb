@@ -1,10 +1,14 @@
 require 'rubygems'
 require 'bundler'
 require 'pry'
+require 'simplecov'
+
 ENV['APP_ENV'] = 'test'
 ENV['ENDPOINT_KEY'] = '123'
+
 Bundler.require(:default, :test)
 Dotenv.load
+SimpleCov.start
 
 require File.join(File.dirname(__FILE__), '..', 'config/environment')
 require File.join(File.dirname(__FILE__), '..', 'nuorder_endpoint')

@@ -13,6 +13,7 @@ group :development, :test do
   gem 'rake'
   gem 'pry'
   gem 'dotenv'
+  gem 'simplecov', require: false
 end
 
 group :test do
