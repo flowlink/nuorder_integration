@@ -22,3 +22,8 @@ group :test do
   gem 'rack-test'
   gem 'webmock'
 end
+
+group :production do
+  gem 'foreman'
+  gem 'unicorn'
+end
