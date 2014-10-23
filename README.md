@@ -37,3 +37,4 @@ to e.g. `http://sandbox1.nuorder.com`
 ![Wombat Logo](http://spreecommerce.com/images/wombat_logo.png)
 
 This integration is 100% open source an licensed under the terms of the New BSD License.
+Copyright (c) 2014 [Netguru](https//netguru.co).
