@@ -66,20 +66,15 @@ module Wombat
 
     def line_items
       @line_items ||= nuorder_order['line_items'].try(:map) do |line_item|
-        price = 0
-        quantity = 0
-        line_item['sizes'].try(:each) do |size|
-          price += size['price'].to_i
-          quantity += size['quantity'].to_i
+        line_item['sizes'].to_a.map do |size|
+          Wombat::Order::LineItem.new(
+            product_id: size['upc'],
+            name: '',
+            quantity: size['quantity'].to_i,
+            price: size['price'].to_i,
+          )
         end
-
-        Wombat::Order::LineItem.new(
-          product_id: line_item['upc'],
-          name: '',
-          quantity: quantity,
-          price: price,
-        )
-      end
+      end.flatten
     end
 
     def adjustments
