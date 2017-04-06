@@ -2,7 +2,7 @@
 
 This is a fully hosted and supported integration for use with the [FlowLink](http://flowlink.io/) product. With this integration you can perform the following functions:
 
-| # | Object (Wombat) | Wombat Webhook  | NuOrder API                 |
+| # | Object (FlowLink) | FlowLink Webhook  | NuOrder API                 |
 |---|-----------------|-----------------|-----------------------------|
 | 1 | Order           | /get_orders     | /api/orders/{status}/detail |
 | 2 | Product         | /add_product    | /api/product/new            |
@@ -14,8 +14,8 @@ This is a fully hosted and supported integration for use with the [FlowLink](htt
 
 1. Gets all orders in `approved` and `edited` status. Webhook marks each order
    as `processed` using the NuOrder API call `/api/order/{id}/process`.
-2. Creates a new product in NuOrder. Saves the `nuorder_id` back in Wombat for later updates.
-   Creates also an *inventory record* in Wombat with the `nuorder_id` with inventory 0.
+2. Creates a new product in NuOrder. Saves the `nuorder_id` back in FlowLink for later updates.
+   Creates also an *inventory record* in FlowLink with the `nuorder_id` with inventory 0.
 3. Updates the product in NuOrder.
 4. **(Not ready yet)** Gets all products form NuOrder based on last modified date.
 5. Updates inventory in NuOrder using `nuorder_id`.
